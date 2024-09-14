@@ -1,8 +1,148 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+  ViewData["Title"] = "Home Page";
 }
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-<div class="text-center flex">
-    <h1 class="display-4 ">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<!-- Main Section -->
+<section class="relative">
+  <!-- Background Image -->
+  <div class="h-96 bg-cover bg-center"
+    style="background-image: url('https://media.istockphoto.com/id/1214872234/vi/anh/l%C3%A1i-xe-tr%C3%AAn-%C4%91%C6%B0%E1%BB%9Dng-n%E1%BB%81n-du-l%E1%BB%8Bch.jpg?s=612x612&w=0&k=20&c=h8o6WxS-hJm-mwBHwBhkbH__HuAlEKMNIKwTEg8f4z0='">
+    <div class="absolute inset-0 bg-black bg-opacity-30"></div>
+  </div>
+  <!-- Form Section -->
+  <div class="absolute inset-0 flex items-center justify-end pr-5">
+    <div class="w-110 rounded-lg bg-white p-6 shadow-lg">
+      <h2 class="mb-4 text-xl font-semibold">Bạn cần thuê xe ?</h2>
+      <form>
+        <!-- Option Vehicle Type -->
+        <div class="mb-4 flex space-x-4">
+          <label class="flex items-center">
+            <input type="radio" name="vehicle" class="form-radio text-blue-600" checked />
+            <span class="ml-2">Ô tô</span>
+          </label>
+          <label class="flex items-center">
+            <input type="radio" name="vehicle" class="form-radio text-blue-600" />
+            <span class="ml-2">Xe máy</span>
+          </label>
+        </div>
+
+        <!-- Location Select -->
+        <div class="mb-4">
+          <label for="location" class="mb-1 block text-gray-700">Chọn tỉnh thành</label>
+          <select id="location" class="w-full rounded-md border border-gray-300 p-2">
+            <option>Chọn tỉnh thành</option>
+            <option>Hà Nội</option>
+            <option>TP Hồ Chí Minh</option>
+            <!-- Add more options as needed -->
+          </select>
+        </div>
+
+        <!-- Date Select -->
+        <div class="mb-4 flex space-x-4">
+          <div>
+            <label for="pick-up-date" class="mb-1 block text-gray-700">Ngày nhận xe</label>
+            <input type="datetime-local" id="pick-up-date" class="w-full rounded-md border border-gray-300 p-2" />
+          </div>
+          <div>
+            <label for="return-date" class="mb-1 block text-gray-700">Ngày trả xe</label>
+            <input type="datetime-local" id="return-date" class="w-full rounded-md border border-gray-300 p-2" />
+          </div>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="w-full rounded-md bg-blue-500 py-2 text-white hover:bg-blue-600">Tìm xe giá
+          tốt</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- Car Brands Section -->
+<section class="mt-12">
+  <div class="mx-auto max-w-7xl px-4">
+    <h2 class="mb-6 text-xl font-semibold">Chọn xe theo hãng</h2>
+    <div class="grid grid-cols-6 gap-4">
+      <!-- Brand logos -->
+      <div class="text-center">
+        <img
+          src="https://www.bonboncar.vn/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Fbonboncar-cms%2FMg_345b3020b0%2FMg_345b3020b0.png&w=1920&q=75"
+          alt="MG logo" class="mx-auto mb-2" />
+        <span>MG</span>
+      </div>
+      <div class="text-center">
+        <img
+          src="https://www.bonboncar.vn/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Fbonboncar-cms%2FHonda_ad76578945%2FHonda_ad76578945.png&w=1920&q=75"
+          alt="Honda logo" class="mx-auto mb-2" />
+        <span>HONDA</span>
+      </div>
+      <div class="text-center">
+        <img
+          src="https://www.bonboncar.vn/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Fbonboncar-cms%2FVOLKSWAGEN_0d4700e714%2FVOLKSWAGEN_0d4700e714.png&w=1920&q=75"
+          alt="Volkswagen logo" class="mx-auto mb-2" />
+        <span>VOLKSWAGEN</span>
+      </div>
+      <div class="text-center">
+        <img
+          src="https://www.bonboncar.vn/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Fbonboncar-cms%2FBMW_060c9e28c5%2FBMW_060c9e28c5.png&w=1920&q=75"
+          alt="BMW logo" class="mx-auto mb-2" />
+        <span>BMW</span>
+      </div>
+      <div class="text-center">
+        <img
+          src="https://www.bonboncar.vn/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Fbonboncar-cms%2FMazda_68273f1988%2FMazda_68273f1988.png&w=1920&q=75"
+          alt="Mazda logo" class="mx-auto mb-2" />
+        <span>MAZDA</span>
+      </div>
+      <div class="text-center">
+        <img
+          src="https://www.bonboncar.vn/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Fbonboncar-cms%2FSuzuki_e6c132e427%2FSuzuki_e6c132e427.png&w=1920&q=75"
+          alt="Suzuki logo" class="mx-auto mb-2" />
+        <span>SUZUKI</span>
+      </div>
+      <div class="hidden">
+        <div class="text-center">
+          <img
+            src="https://www.bonboncar.vn/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Fbonboncar-cms%2FVinfast_f69a8092ac%2FVinfast_f69a8092ac.png&w=1920&q=75"
+            alt="Suzuki logo" class="mx-auto mb-2" />
+          <span>VINFAST</span>
+        </div>
+        <div class="text-center">
+          <img
+            src="https://www.bonboncar.vn/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Fbonboncar-cms%2FHYUNDAI_61e00ad541%2FHYUNDAI_61e00ad541.png&w=1920&q=75"
+            alt="Suzuki logo" class="mx-auto mb-2" />
+          <span>HYUNDAI</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="mt-5 flex justify-between p-5">
+    <div class="flex gap-5">
+      <div class="flex items-center gap-2 rounded border border-black p-2">
+        <i class="fas fa-th"></i> Tất cả
+      </div>
+
+      <div class="flex items-center gap-2 rounded border border-black p-2">
+        <i class="fas fa-chair"></i> Số chỗ
+      </div>
+
+      <div class="flex items-center gap-2 rounded border border-black p-2">
+        <i class="fas fa-car"></i> Hãng xe
+      </div>
+
+      <div class="flex items-center gap-2 rounded border border-black p-2">
+        <i class="fas fa-cogs"></i> Loại xe
+      </div>
+
+      <div class="flex items-center gap-2 rounded border border-black p-2">
+        <i class="fas fa-map-marker-alt"></i> Khu vực xe
+      </div>
+    </div>
+
+    <div class="flex items-center border rounded border-black p-2">
+      <i class="fas fa-sort"></i> Sắp xếp
+    </div>
+  </div>
+</section>

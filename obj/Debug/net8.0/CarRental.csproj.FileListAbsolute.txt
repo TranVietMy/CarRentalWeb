@@ -53,9 +53,7 @@ D:\CarRentalWeb\obj\Debug\net8.0\staticwebassets\msbuild.build.CarRental.props
 D:\CarRentalWeb\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.CarRental.props
 D:\CarRentalWeb\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.CarRental.props
 D:\CarRentalWeb\obj\Debug\net8.0\staticwebassets.pack.json
-D:\CarRentalWeb\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 D:\CarRentalWeb\obj\Debug\net8.0\scopedcss\bundle\CarRental.styles.css
-D:\CarRentalWeb\obj\Debug\net8.0\scopedcss\projectbundle\CarRental.bundle.scp.css
 D:\CarRentalWeb\obj\Debug\net8.0\CarRental.dll
 D:\CarRentalWeb\obj\Debug\net8.0\refint\CarRental.dll
 D:\CarRentalWeb\obj\Debug\net8.0\CarRental.pdb

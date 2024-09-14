@@ -1,8 +1,8 @@
 {
   "Files": [
     {
-      "Id": "D:\\CarRentalWeb\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\CarRental.bundle.scp.css",
-      "PackagePath": "staticwebassets\\CarRental.bundle.scp.css"
+      "Id": "D:\\CarRentalWeb\\wwwroot\\Image\\Paucek and Lage.png",
+      "PackagePath": "staticwebassets\\Image\\Paucek and Lage.png"
     },
     {
       "Id": "D:\\CarRentalWeb\\wwwroot\\css\\input.css",
