@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\CarRental\\CarRental.csproj": {}
+    "D:\\CarRentalWeb\\CarRental.csproj": {}
   },
   "projects": {
-    "D:\\CarRental\\CarRental.csproj": {
+    "D:\\CarRentalWeb\\CarRental.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\CarRental\\CarRental.csproj",
+        "projectUniqueName": "D:\\CarRentalWeb\\CarRental.csproj",
         "projectName": "CarRental",
-        "projectPath": "D:\\CarRental\\CarRental.csproj",
+        "projectPath": "D:\\CarRentalWeb\\CarRental.csproj",
         "packagesPath": "C:\\Users\\letie\\.nuget\\packages\\",
-        "outputPath": "D:\\CarRental\\obj\\",
+        "outputPath": "D:\\CarRentalWeb\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\letie\\AppData\\Roaming\\NuGet\\NuGet.Config"
