@@ -120,29 +120,376 @@
 <section>
   <div class="mt-5 flex justify-between p-5">
     <div class="flex gap-5">
-      <div class="flex items-center gap-2 rounded border border-black p-2">
-        <i class="fas fa-th"></i> Tất cả
+      <div class="relative">
+        <div class="flex items-center gap-2 rounded border border-black p-2 cursor-pointer"
+          onclick="toggleDropdown('dropdownAll')">
+          <i class="fas fa-th"></i> Tất cả
+        </div>
+        <!-- Dropdown list -->
+        <ul id="dropdownAll" class="hidden absolute mt-2 w-48 rounded border bg-white shadow-lg">
+          <li class="px-4 py-2 hover:bg-gray-200">Option 1</li>
+          <li class="px-4 py-2 hover:bg-gray-200">Option 2</li>
+          <li class="px-4 py-2 hover:bg-gray-200">Option 3</li>
+        </ul>
       </div>
 
-      <div class="flex items-center gap-2 rounded border border-black p-2">
-        <i class="fas fa-chair"></i> Số chỗ
+      <div class="relative">
+        <div class="flex items-center gap-2 rounded border border-black p-2 cursor-pointer"
+          onclick="toggleDropdown('dropdownSeats')">
+          <i class="fas fa-chair"></i> Số chỗ
+        </div>
+        <!-- Dropdown list -->
+        <ul id="dropdownSeats" class="hidden absolute mt-2 w-48 rounded border bg-white shadow-lg">
+          <li class="px-4 py-2 hover:bg-gray-200">4 Chỗ</li>
+          <li class="px-4 py-2 hover:bg-gray-200">7 Chỗ</li>
+          <li class="px-4 py-2 hover:bg-gray-200">16 Chỗ</li>
+        </ul>
       </div>
 
-      <div class="flex items-center gap-2 rounded border border-black p-2">
-        <i class="fas fa-car"></i> Hãng xe
+      <div class="relative">
+        <div class="flex items-center gap-2 rounded border border-black p-2 cursor-pointer"
+          onclick="toggleDropdown('dropdownBrand')">
+          <i class="fas fa-car"></i> Hãng xe
+        </div>
+        <!-- Dropdown list -->
+        <ul id="dropdownBrand" class="hidden absolute mt-2 w-48 rounded border bg-white shadow-lg">
+          <li class="px-4 py-2 hover:bg-gray-200">Toyota</li>
+          <li class="px-4 py-2 hover:bg-gray-200">Honda</li>
+          <li class="px-4 py-2 hover:bg-gray-200">Ford</li>
+        </ul>
       </div>
 
-      <div class="flex items-center gap-2 rounded border border-black p-2">
-        <i class="fas fa-cogs"></i> Loại xe
+      <div class="relative">
+        <div class="flex items-center gap-2 rounded border border-black p-2 cursor-pointer"
+          onclick="toggleDropdown('dropdownType')">
+          <i class="fas fa-cogs"></i> Loại xe
+        </div>
+        <!-- Dropdown list -->
+        <ul id="dropdownType" class="hidden absolute mt-2 w-48 rounded border bg-white shadow-lg">
+          <li class="px-4 py-2 hover:bg-gray-200">SUV</li>
+          <li class="px-4 py-2 hover:bg-gray-200">Sedan</li>
+          <li class="px-4 py-2 hover:bg-gray-200">Truck</li>
+        </ul>
       </div>
 
-      <div class="flex items-center gap-2 rounded border border-black p-2">
-        <i class="fas fa-map-marker-alt"></i> Khu vực xe
+      <div class="relative">
+        <div class="flex items-center gap-2 rounded border border-black p-2 cursor-pointer"
+          onclick="toggleDropdown('dropdownLocation')">
+          <i class="fas fa-map-marker-alt"></i> Khu vực xe
+        </div>
+        <!-- Dropdown list -->
+        <ul id="dropdownLocation" class="hidden absolute mt-2 w-48 rounded border bg-white shadow-lg">
+          <li class="px-4 py-2 hover:bg-gray-200">Hà Nội</li>
+          <li class="px-4 py-2 hover:bg-gray-200">Hồ Chí Minh</li>
+          <li class="px-4 py-2 hover:bg-gray-200">Đà Nẵng</li>
+        </ul>
       </div>
     </div>
 
-    <div class="flex items-center border rounded border-black p-2">
+    <div class="flex items-center border rounded border-black p-2 cursor-pointer"
+      onclick="toggleDropdown('dropdownSort')">
       <i class="fas fa-sort"></i> Sắp xếp
     </div>
+    <!-- Dropdown list -->
+    <ul id="dropdownSort" class="hidden absolute mt-2 w-48 rounded border bg-white shadow-lg">
+      <li class="px-4 py-2 hover:bg-gray-200">Giá tăng dần</li>
+      <li class="px-4 py-2 hover:bg-gray-200">Giá giảm dần</li>
+    </ul>
   </div>
 </section>
+
+<div class="grid grid-cols-4 gap-4 p-5">
+  <!-- Card 1 -->
+  <div class="border rounded-lg p-4 shadow-md">
+    <img
+      src="https://n1-pstg.mioto.vn/cho_thue_xe_o_to_tu_lai_thue_xe_du_lich_hanoi/mitsubishi_outlander_premium_2022/p/g/2024/03/09/01/UIAx1kVhaI1l2sWBLOZM_g.jpg"
+      alt="BENLY" class="w-full h-auto rounded-md mb-4">
+    <h2 class="text-lg font-bold">MITSUBISHI OUTLANDER</h2>
+    <p class="text-gray-500"><i class="fas fa-map-marker-alt"></i> Bình Thạnh, TP.HCM</p>
+    <div class="flex justify-between items-center my-2">
+      <p class="text-gray-500 line-through"><i class="fas fa-dollar-sign"></i> 450k</p>
+      <p class="text-teal-600 font-bold"><i class="fas fa-tag"></i> 420k/4 giờ</p>
+    </div>
+    <div class="flex justify-between items-center my-2">
+      <p class="text-gray-500 line-through"><i class="fas fa-dollar-sign"></i> 950k</p>
+      <p class="text-teal-600 font-bold"><i class="fas fa-tag"></i> 880k/24 giờ</p>
+    </div>
+    <div class="flex justify-between items-center my-2">
+      <p class="text-gray-500"><i class="fas fa-users"></i> 6 chỗ</p>
+      <p class="text-gray-500"><i class="fas fa-cogs"></i> Số tự động</p>
+    </div>
+    <button class="mt-4 bg-teal-600 text-white py-2 px-4 rounded hover:bg-teal-700" style="background-color: teal;">
+      <i class="fas fa-car"></i> THUÊ XE NGAY
+    </button>
+  </div>
+
+  <!-- Card 2 -->
+  <div class="border rounded-lg p-4 shadow-md">
+    <img
+      src="https://n1-pstg.mioto.vn/cho_thue_xe_o_to_tu_lai_thue_xe_du_lich_hanoi/kia_sorento_luxury_2014/p/g/2024/07/06/01/5kHpSU_QayLm5lfUA3lR1A.jpg"
+      alt="Mitsubishi Outlander 2020" class="w-full h-auto rounded-md mb-4">
+    <h2 class="text-lg font-bold">KIA SORENTO LUXURY 2014</h2>
+    <p class="text-gray-500"><i class="fas fa-map-marker-alt"></i> Quận 3, TP.HCM</p>
+    <div class="flex justify-between items-center my-2">
+      <p class="text-gray-500 line-through"><i class="fas fa-dollar-sign"></i> 450k</p>
+      <p class="text-teal-600 font-bold"><i class="fas fa-tag"></i> 350k/4 giờ</p>
+    </div>
+    <div class="flex justify-between items-center my-2">
+      <p class="text-gray-500 line-through"><i class="fas fa-dollar-sign"></i> 950k</p>
+      <p class="text-teal-600 font-bold"><i class="fas fa-tag"></i> 680k/24 giờ</p>
+    </div>
+    <div class="flex justify-between items-center my-2">
+      <p class="text-gray-500"><i class="fas fa-users"></i> 4 chỗ</p>
+      <p class="text-gray-500"><i class="fas fa-cogs"></i> Số tự động</p>
+    </div>
+    <button class="mt-4 bg-teal-600 text-white py-2 px-4 rounded hover:bg-teal-700" style="background-color: teal;">
+      <i class="fas fa-car"></i> THUÊ XE NGAY
+    </button>
+  </div>
+
+  <!-- Card 3 -->
+  <div class="border rounded-lg p-4 shadow-md">
+    <img
+      src="https://n1-pstg.mioto.vn/cho_thue_xe_o_to_tu_lai_thue_xe_du_lich_hanoi/kia_sorento_deluxe_2014/p/g/2019/05/24/23/7L7lT76g7i_lce6-3u9Mvw.jpg"
+      alt="Mitsubishi Outlander 2020" class="w-full h-auto rounded-md mb-4">
+    <h2 class="text-lg font-bold">KIA SORENTO DELUXE 2014</h2>
+    <p class="text-gray-500"><i class="fas fa-map-marker-alt"></i> Quận Ba Đình, Hà Nội</p>
+    <div class="flex justify-between items-center my-2">
+      <p class="text-gray-500 line-through"><i class="fas fa-dollar-sign"></i> 450k</p>
+      <p class="text-teal-600 font-bold"><i class="fas fa-tag"></i> 350k/4 giờ</p>
+    </div>
+    <div class="flex justify-between items-center my-2">
+      <p class="text-gray-500 line-through"><i class="fas fa-dollar-sign"></i> 950k</p>
+      <p class="text-teal-600 font-bold"><i class="fas fa-tag"></i> 680k/24 giờ</p>
+    </div>
+    <div class="flex justify-between items-center my-2">
+      <p class="text-gray-500"><i class="fas fa-users"></i> 5 chỗ</p>
+      <p class="text-gray-500"><i class="fas fa-cogs"></i> Số tự động</p>
+    </div>
+    <button class="mt-4 bg-teal-600 text-white py-2 px-4 rounded hover:bg-teal-700" style="background-color: teal;">
+      <i class="fas fa-car"></i> THUÊ XE NGAY
+    </button>
+  </div>
+
+  <!-- Card 4 -->
+  <div class="border rounded-lg p-4 shadow-md">
+    <img
+      src="https://n1-pstg.mioto.vn/cho_thue_xe_o_to_tu_lai_thue_xe_du_lich_hanoi/honda_crv_g_2009/p/g/2024/02/19/16/eCHbWjLaXz4tfHvzZdi26w.jpg"
+      alt="Mitsubishi Outlander 2020" class="w-full h-auto rounded-md mb-4">
+    <h2 class="text-lg font-bold">HONDA CRV G 2009</h2>
+    <p class="text-gray-500"><i class="fas fa-map-marker-alt"></i> Quận Cầu Giấy, Hà Nội</p>
+    <div class="flex justify-between items-center my-2">
+      <p class="text-gray-500 line-through"><i class="fas fa-dollar-sign"></i> 450k</p>
+      <p class="text-teal-600 font-bold"><i class="fas fa-tag"></i> 350k/4 giờ</p>
+    </div>
+    <div class="flex justify-between items-center my-2">
+      <p class="text-gray-500 line-through"><i class="fas fa-dollar-sign"></i> 950k</p>
+      <p class="text-teal-600 font-bold"><i class="fas fa-tag"></i> 680k/24 giờ</p>
+    </div>
+    <div class="flex justify-between items-center my-2">
+      <p class="text-gray-500"><i class="fas fa-users"></i> 5 chỗ</p>
+      <p class="text-gray-500"><i class="fas fa-cogs"></i> Số tự động</p>
+    </div>
+    <button class="mt-4 bg-teal-600 text-white py-2 px-4 rounded hover:bg-teal-700" style="background-color: teal;">
+      <i class="fas fa-car"></i> THUÊ XE NGAY
+    </button>
+  </div>
+
+  <!-- Card 5 -->
+  <div class="border rounded-lg p-4 shadow-md">
+    <img
+      src="https://n1-pstg.mioto.vn/cho_thue_xe_o_to_tu_lai_thue_xe_du_lich_hanoi/mitsubishi_outlander_2020/p/g/2021/07/13/15/cntq--9bNnW16Lc9QIugSw.jpg"
+      alt="Mitsubishi Outlander 2020" class="w-full h-auto rounded-md mb-4">
+    <h2 class="text-lg font-bold">MITSUBISHI OUTLANDER 2020</h2>
+    <p class="text-gray-500"><i class="fas fa-map-marker-alt"></i> Quận Bắc Từ Liêm, Hà Nội</p>
+    <div class="flex justify-between items-center my-2">
+      <p class="text-gray-500 line-through"><i class="fas fa-dollar-sign"></i> 450k</p>
+      <p class="text-teal-600 font-bold"><i class="fas fa-tag"></i> 350k/4 giờ</p>
+    </div>
+    <div class="flex justify-between items-center my-2">
+      <p class="text-gray-500 line-through"><i class="fas fa-dollar-sign"></i> 950k</p>
+      <p class="text-teal-600 font-bold"><i class="fas fa-tag"></i> 680k/24 giờ</p>
+    </div>
+    <div class="flex justify-between items-center my-2">
+      <p class="text-gray-500"><i class="fas fa-users"></i> 7 chỗ</p>
+      <p class="text-gray-500"><i class="fas fa-cogs"></i> Số tự động</p>
+    </div>
+    <button class="mt-4 bg-teal-600 text-white py-2 px-4 rounded hover:bg-teal-700" style="background-color: teal;">
+      <i class="fas fa-car"></i> THUÊ XE NGAY
+    </button>
+  </div>
+
+  <!-- Card 6 -->
+  <div class="border rounded-lg p-4 shadow-md">
+    <img
+      src="https://n1-pstg.mioto.vn/cho_thue_xe_o_to_tu_lai_thue_xe_du_lich_hanoi/mitsubishi_xpander_2024/p/g/2024/05/03/11/cxZ7Yv1UPY8Pbk2sbQrWWg.jpg"
+      alt="TOYOTA INNOVA 2017" class="w-full h-auto rounded-md mb-4">
+    <h2 class="text-lg font-bold">TOYOTA INNOVA 2017</h2>
+    <p class="text-gray-500"><i class="fas fa-map-marker-alt"></i> Quận Tân Phú, TP.HCM</p>
+    <div class="flex justify-between items-center my-2">
+      <p class="text-gray-500 line-through"><i class="fas fa-dollar-sign"></i> 600k</p>
+      <p class="text-teal-600 font-bold"><i class="fas fa-tag"></i> 500k/4 giờ</p>
+    </div>
+    <div class="flex justify-between items-center my-2">
+      <p class="text-gray-500 line-through"><i class="fas fa-dollar-sign"></i> 1.200k</p>
+      <p class="text-teal-600 font-bold"><i class="fas fa-tag"></i> 900k/24 giờ</p>
+    </div>
+    <div class="flex justify-between items-center my-2">
+      <p class="text-gray-500"><i class="fas fa-users"></i> 7 chỗ</p>
+      <p class="text-gray-500"><i class="fas fa-cogs"></i> Số tự động</p>
+    </div>
+    <button class="mt-4 bg-teal-600 text-white py-2 px-4 rounded hover:bg-teal-700" style="background-color: teal;">
+      <i class="fas fa-car"></i> THUÊ XE NGAY
+    </button>
+  </div>
+
+  <!-- Card 7 -->
+  <div class="border rounded-lg p-4 shadow-md">
+    <img
+      src="https://n1-pstg.mioto.vn/cho_thue_xe_o_to_tu_lai_thue_xe_du_lich_hanoi/mitsubishi_xpander_2022/p/g/2022/11/14/20/RpqXyGBcV9d2OgRrpxLhSg.jpg"
+      alt="FORD EVEREST TITANIUM 2020" class="w-full h-auto rounded-md mb-4">
+    <h2 class="text-lg font-bold">FORD EVEREST TITANIUM 2020</h2>
+    <p class="text-gray-500"><i class="fas fa-map-marker-alt"></i> Quận 2, TP.HCM</p>
+    <div class="flex justify-between items-center my-2">
+      <p class="text-gray-500 line-through"><i class="fas fa-dollar-sign"></i> 700k</p>
+      <p class="text-teal-600 font-bold"><i class="fas fa-tag"></i> 600k/4 giờ</p>
+    </div>
+    <div class="flex justify-between items-center my-2">
+      <p class="text-gray-500 line-through"><i class="fas fa-dollar-sign"></i> 1.400k</p>
+      <p class="text-teal-600 font-bold"><i class="fas fa-tag"></i> 1.100k/24 giờ</p>
+    </div>
+    <div class="flex justify-between items-center my-2">
+      <p class="text-gray-500"><i class="fas fa-users"></i> 6 chỗ</p>
+      <p class="text-gray-500"><i class="fas fa-cogs"></i> Số tự động</p>
+    </div>
+    <button class="mt-4 bg-teal-600 text-white py-2 px-4 rounded hover:bg-teal-700" style="background-color: teal;">
+      <i class="fas fa-car"></i> THUÊ XE NGAY
+    </button>
+  </div>
+
+  <!-- Card 8 -->
+  <div class="border rounded-lg p-4 shadow-md">
+    <img
+      src="https://n1-pstg.mioto.vn/cho_thue_xe_o_to_tu_lai_thue_xe_du_lich_hanoi/vinfast_fadil_2020/p/g/2023/02/23/21/Be9RCqLCqGe4QLTvaJthMQ.jpg"
+      alt="MERCEDES-BENZ GLE 2020" class="w-full h-auto rounded-md mb-4">
+    <h2 class="text-lg font-bold">MERCEDES-BENZ GLE 2020</h2>
+    <p class="text-gray-500"><i class="fas fa-map-marker-alt"></i> Quận Phú Nhuận, TP.HCM</p>
+    <div class="flex justify-between items-center my-2">
+      <p class="text-gray-500 line-through"><i class="fas fa-dollar-sign"></i> 1.200k</p>
+      <p class="text-teal-600 font-bold"><i class="fas fa-tag"></i> 1.000k/4 giờ</p>
+    </div>
+    <div class="flex justify-between items-center my-2">
+      <p class="text-gray-500 line-through"><i class="fas fa-dollar-sign"></i> 2.200k</p>
+      <p class="text-teal-600 font-bold"><i class="fas fa-tag"></i> 2.000k/24 giờ</p>
+    </div>
+    <div class="flex justify-between items-center my-2">
+      <p class="text-gray-500"><i class="fas fa-users"></i> 5 chỗ</p>
+      <p class="text-gray-500"><i class="fas fa-cogs"></i> Số tự động</p>
+    </div>
+    <button class="mt-4 bg-teal-600 text-white py-2 px-4 rounded hover:bg-teal-700" style="background-color: teal;">
+      <i class="fas fa-car"></i> THUÊ XE NGAY
+    </button>
+  </div>
+</div>
+<div class="w-full flex justify-center">
+  <button class="mt-4 mx-auto bg-teal-600  text-white py-2 px-4 rounded hover:bg-teal-700"
+    style="background-color: teal;">
+    <i class=""></i> Xem thêm </button>
+</div>
+
+<div class="mt-6">
+  <p class="text-3xl font-semibold p-6 pl-20">Lợi ích của Car rental</p>
+  <div class="flex flex-col items-center mt-auto p-5">
+    <div class="flex flex-wrap gap-10 justify-center">
+      <div class="flex flex-wrap gap-10 justify-center p-5">
+        <div class="flex items-start gap-6 w-full md:w-1/3">
+          <img src="https://chungxe.vn/assets/images/icon/icon1.png" style="width: 100px;" alt="">
+          <div class="mt-2">
+            <h1 class="text-lg font-semibold">Nhiều lựa chọn</h1>
+            <p class="text-gray-600 text-lg">Hàng trăm loại xe đa dạng ở nhiều địa điểm trên cả nước, phù hợp với mọi
+              mục
+              đích của bạn</p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-6 w-full md:w-1/3">
+          <img src="https://chungxe.vn/assets/images/icon/icon2.png" style="width: 80px;" alt="">
+          <div class="mt-2">
+            <h1 class="text-lg font-semibold">Thuận tiện</h1>
+            <p class="text-gray-600 text-lg">Dễ dàng tìm kiếm, so sánh và đặt chiếc xe như ý với chỉ vài click chuột</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="flex flex-wrap gap-10 justify-center p-5">
+      <div class="flex items-start gap-6 w-full md:w-1/3">
+        <img src="https://chungxe.vn/assets/images/icon/icon3.png" style="width: 100px;" alt="">
+        <div class="mt-2">
+          <h1 class="text-lg font-semibold">Giá cả cạnh tranh</h1>
+          <p class="text-gray-600 text-lg">Giá thuê được niêm yết công khai và rẻ hơn tới 10% so với giá truyền thống
+          </p>
+        </div>
+      </div>
+
+      <div class="flex items-start gap-6 w-full md:w-1/3">
+        <img src="https://chungxe.vn/assets/images/icon/icon4.png" style="width: 100px;" alt="">
+        <div class="mt-2">
+          <h1 class="text-lg font-semibold">Tin cậy</h1>
+          <p class="text-gray-600 text-lg">Các xe đều có thời gian sử dụng dưới 3 năm và được bảo dưỡng thường xuyên</p>
+        </div>
+      </div>
+    </div>
+    <div class="flex flex-wrap gap-10 justify-center p-5">
+      <div class="flex items-start gap-6 w-full md:w-1/3">
+        <img src="https://chungxe.vn/assets/images/icon/icon5.png" style="width: 100px;" alt="">
+        <div class="mt-2">
+          <h1 class="text-lg font-semibold">Hỗ trợ 24/7</h1>
+          <p class="text-gray-600 text-lg">Có nhân viên hỗ trợ khách hàng trong suốt quá trình thuê xe</p>
+        </div>
+      </div>
+      <br>
+      <div class="flex items-start gap-6 w-full md:w-1/3">
+        <img src="https://chungxe.vn/assets/images/icon/insurance.png" style="width: 120px;" alt="">
+        <div class="mt-2">
+          <h1 class="text-lg font-semibold">Bảo hiểm</h1>
+          <p class="text-gray-600 text-lg">An tâm với các gói bảo hiểm thuê xe tự lái trong suốt quá trình thuê xe</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<div class="bg-gray-100">
+  <div class="container mx-auto px-4 py-8">
+    <h1 class="text-3xl font-bold text-center mb-8">Đặt
+      xe như thế nào</h1>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="flex flex-col items-center justify-center p-8 bg-white rounded-lg shadow-md">
+        <img src="~/Image/maytinh1.png" alt="Đặt xe" class=" mb-4">
+        <h2 class="text-2xl font-semibold mb-2">Đặt xe</h2>
+        <p class="text-gray-700">Nhanh chóng đặt một chiếc xe ưng ý thông qua Website hoặc Ứng dụng (App) của chúng tôi.
+        </p>
+      </div>
+
+      <div class="flex 
+ flex-col items-center justify-center p-8 bg-white rounded-lg shadow-md">
+        <img src="~/Image/chiakhoa.png" alt="Nhận xe" class=" mb-4">
+        <h2 class="text-2xl font-semibold mb-2">Nhận xe</h2>
+        <p class="text-gray-700">Nhận xe tại nhà hoặc các đại lý trong khu vực của chúng tôi.</p>
+      </div>
+
+      <div class="flex flex-col items-center justify-center p-8 bg-white rounded-lg shadow-md">
+        <img src="~/Image/xe.png" alt="Tận hưởng" class=" mb-4">
+        <h2 class="text-2xl font-semibold mb-2">Tận hưởng</h2>
+        <p class="text-gray-700">Tất cả các phương tiện của chúng tôi đều đạt chuẩn an toàn.</p>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  function toggleDropdown(dropdownId) {
+    const dropdown = document.getElementById(dropdownId);
+    dropdown.classList.toggle('hidden');
+  }
+</script>
