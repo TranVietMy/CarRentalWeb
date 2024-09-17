@@ -5,6 +5,22 @@
       "PackagePath": "staticwebassets\\Image\\Paucek and Lage.png"
     },
     {
+      "Id": "D:\\CarRentalWeb\\wwwroot\\Image\\chiakhoa.png",
+      "PackagePath": "staticwebassets\\Image\\chiakhoa.png"
+    },
+    {
+      "Id": "D:\\CarRentalWeb\\wwwroot\\Image\\datxe.png",
+      "PackagePath": "staticwebassets\\Image\\datxe.png"
+    },
+    {
+      "Id": "D:\\CarRentalWeb\\wwwroot\\Image\\maytinh1.png",
+      "PackagePath": "staticwebassets\\Image\\maytinh1.png"
+    },
+    {
+      "Id": "D:\\CarRentalWeb\\wwwroot\\Image\\xe.png",
+      "PackagePath": "staticwebassets\\Image\\xe.png"
+    },
+    {
       "Id": "D:\\CarRentalWeb\\wwwroot\\css\\input.css",
       "PackagePath": "staticwebassets\\css\\input.css"
     },

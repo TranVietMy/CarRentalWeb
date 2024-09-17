@@ -19,5 +19,29 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
-
+app.MapControllerRoute(
+    name: "Login",
+    pattern: "/login",
+    defaults: new { controller = "Account", action = "Login" }
+);
+app.MapControllerRoute(
+    name: "Register",
+    pattern: "/register",
+    defaults: new { controller = "Account", action = "Register" }
+);
+app.MapControllerRoute(
+    name: "ForgotPassword",
+    pattern: "/forgotpassword",
+    defaults: new { controller = "Account", action = "ForgotPassword" }
+);
+app.MapControllerRoute(
+    name: "Lookup",
+    pattern: "/lookup",
+    defaults: new { controller = "Home", action = "Lookup" }
+);
+app.MapControllerRoute(
+    name: "Partners",
+    pattern: "/partners",
+    defaults: new { controller = "Home", action = "Partners" }
+);
 app.Run();

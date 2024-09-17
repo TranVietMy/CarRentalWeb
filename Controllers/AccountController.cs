@@ -4,29 +4,29 @@ using CarRental.Models;
 
 namespace CarRental.Controllers;
 
-public class HomeController : Controller
+public class AccountController : Controller
 {
-    private readonly ILogger<HomeController> _logger;
+    private readonly ILogger<AccountController> _logger;
 
-    public HomeController(ILogger<HomeController> logger)
+    public AccountController(ILogger<AccountController> logger)
     {
         _logger = logger;
     }
 
 
-    public IActionResult Index()
+    public IActionResult Login()
+    {
+        return View();
+    }
+    public IActionResult Register()
+    {
+        return View();
+    }
+     public IActionResult ForgotPassword()
     {
         return View();
     }
 
-    public IActionResult Lookup()
-    {
-        return View();
-    }
-    public IActionResult Partners ()
-    {
-         return View();
-    }
   
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
