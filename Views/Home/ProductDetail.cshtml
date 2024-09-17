@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Car Rental Listing</title>
+</head>
+<div class="mx-auto bg-white p-6 shadow-md rounded-lg m-5">
+    <!-- Thông tin xe -->
+    <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-5">
+        <div>
+            <h2 class="text-2xl font-bold text-gray-800">MERCEDES C200 2016</h2>
+            <div class="flex items-center text-gray-600 space-x-2 mt-2">
+                <span class="text-yellow-500">★ 5.0</span>
+                <span>•</span>
+                <span>21 chuyến</span>
+                <span>•</span>
+                <span>Quận 3, Tp.HCM</span>
+            </div>
+        </div>
+        <button class="mt-4 lg:mt-0 bg-teal-600 text-white font-semibold py-2 px-4 rounded-md">Thuê xe ngay</button>
+    </div>
+
+    <!-- Hình ảnh xe -->
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-4 mb-6">
+        <div class="lg:col-span-3">
+            <img class="w-full h-auto rounded-md border-2 border-blue-300"
+                src="https://n1-pstg.mioto.vn/cho_thue_xe_o_to_tu_lai_thue_xe_du_lich_hochiminh/mercedes_c200_2016/p/g/2024/02/20/22/rvBU3hcqRb0bOUijNyiAhA.jpg"
+                alt="Main Car Image">
+        </div>
+        <div class="grid grid-cols-1 gap-4">
+            <img class="w-full h-auto rounded-md border-2 border-gray-300"
+                src="https://n1-pstg.mioto.vn/cho_thue_xe_o_to_tu_lai_thue_xe_du_lich_hochiminh/mercedes_c200_2016/p/g/2024/02/20/22/U9OhVvwg1OQm7hYVQPhsgQ.jpg"
+                alt="Side Image 1">
+            <img class="w-full h-auto rounded-md border-2 border-gray-300"
+                src="https://n1-pstg.mioto.vn/cho_thue_xe_o_to_tu_lai_thue_xe_du_lich_hochiminh/mercedes_c200_2016/p/g/2024/02/20/22/SfVGFDkdC6VUi-stFH6aXg.jpg"
+                alt="Side Image 2">
+            <img class="w-full h-auto rounded-md border-2 border-gray-300"
+                src="https://n1-pstg.mioto.vn/cho_thue_xe_o_to_tu_lai_thue_xe_du_lich_hochiminh/mercedes_c200_2016/p/g/2024/02/20/22/akV8-6sb8MrAwPGZG3kwNQ.jpg"
+                alt="Side Image 3">
+        </div>
+    </div>
+
+    <!-- Thông tin bảo hiểm -->
+    <div class="flex items-start bg-gray-50 p-4 border-2 border-gray-200 rounded-md mb-5">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-teal-700 mr-3" fill="none" viewBox="0 0 24 24"
+            stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+        </svg>
+        <p class="text-gray-600">Bảo hiểm thuê xe: Chuyến đi đã mua bảo hiểm. Khách thuê bồi thường tối đa 2.000.000
+            VND trong trường hợp có sự cố ngoài ý muốn.</p>
+    </div>
+
+    <!-- Đặc điểm xe -->
+    <hr class="mb-5">
+    <div class="grid grid-cols-1 lg:grid-cols-4 text-center gap-4 mb-5">
+        <div>
+            <p class="text-gray-600"><strong>Số ghế:</strong> 4 chỗ</p>
+        </div>
+        <div>
+            <p class="text-gray-600"><strong>Truyền động:</strong> Số tự động</p>
+        </div>
+        <div>
+            <p class="text-gray-600"><strong>Nhiên liệu:</strong> Xăng</p>
+        </div>
+        <div>
+            <p class="text-gray-600"><strong>NL tiêu hao:</strong> 6 lít/100km</p>
+        </div>
+    </div>
+    <hr class="mb-5">
+
+    <!-- Mô tả -->
+    <h3 class="text-xl font-semibold text-gray-800 mb-4">Mô tả</h3>
+    <p class="text-gray-600 mb-5">
+        MG5 LUXURY 2023 Trắng <br>
+        Xe gia đình mới lấy ODO 3000km <br>
+        + Trang bị đủ tính năng: <br>
+        - Cruise Control & Auto Hold <br>
+        - Cân bằng điện tử <br>
+        - Áp suất lốp <br>
+        - Cam 360
+    </p>
+    <div class="container mx-auto px-4">
+        <h2 class="text-2xl font-bold mb-4">Các tiện nghi khác</h2>
+        <ul class="grid grid-cols-3 gap-4">
+            <li class="flex items-center">
+                <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round"   stroke-linejoin="round" stroke-width="2"
+                        d="M17 9V7m4 0a3 3 0 01-3 3v4a3 3 0 01-3-3H5a2 2 0 00-2 2v6a2 2 0 002 2h14a2 2 0 002-2v-6a2 2 0 00-2-2z">
+                    </path>
+                </svg>
+                <span>Bản đồ (Map)</span>
+            </li>
+
+            <li class="flex items-center">
+                <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path  
+                        d="M16 8a4 4 0 11-8 0 4 4 0 018 0zM12 2c2.21 0 4 1.79 4 4s-1.79 4-4 4-4-1.79-4-4 1.79-4 4-4zM9.33 17.33l2.83-2.83a1 1 0 00-1.41-1.41L4.83 12.03a1 1 0 00-1.41 1.41l2.83 2.83a1 1 0 001.41 0z">
+                    </path>
+                </svg>
+                <span>Bluetooth</span>
+            </li>
+
+            <li class="flex items-center">
+                <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path   d="M12 14a2 2 0 11-4 0 2 2 0 014 0zM4 2v20h16V2a2 2 0 00-2-2H4z"></path>
+                </svg>
+                <span>Camera 360</span>
+            </li>
+
+            <li class="flex items-center">
+                <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round"   stroke-linejoin="round" stroke-width="2"
+                        d="M17 11V7m0 0l-8-4-4 4V11m16 0V7a2 2 0 00-2-2H5a2 2 0 00-2 2v4m16 0h-1v7a2 2 0 01-2 2H5a2 2 0 01-2-2v-7h-1z">
+                    </path>
+                </svg>
+                <span>Camera hành trình (Dashcam)</span>
+            </li>
+        </ul>
+    </div>
+
+    <div class="mt-5">
+        <p class="text-2xl font-bold p-4">Giấy tờ thuê xe</p>
+        <div class="flex items-center space-x-4 mb-5 p-2">
+            <!-- Icon GPLX -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-teal-600" viewBox="0 0 24 24"
+                stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path
+                    d="M12 2a10 10 0 0 1 10 10 10 10 0 0 1-10 10 10 10 0 0 1-10-10 10 10 0 0 1 10-10zm0 9V7m0 2h-2a2 2 0 0 0 2 2m0-4h4m-4 1h4m-2 9.93A7.002 7.002 0 0 0 19.07 17H4.93a7.002 7.002 0 0 0 7.07 3.93z" />
+            </svg>
+            <!-- Text -->
+            <div>
+                <h3 class="text-lg font-semibold text-gray-800">GPLX (đối chiếu)</h3>
+                <p class="text-gray-600">Giấy phép lái xe đối chiếu với thông tin đã cung cấp.</p>
+            </div>
+        </div>
+
+        <!-- CCCD (đối chiếu VNeID) -->
+        <div class="flex items-center space-x-4 p-3">
+            <!-- Icon CCCD -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-teal-600" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path
+                    d="M8 3a5 5 0 0 1 5 5v7a5 5 0 0 1-5 5H5a5 5 0 0 1-5-5v-7a5 5 0 0 1 5-5h3zm0 2H5a3 3 0 0 0-3 3v7a3 3 0 0 0 3 3h3a3 3 0 0 0 3-3V8a3 3 0 0 0-3-3zm7 7h1v1h-1v-1zm1-4h-1v1h1v-1z" />
+            </svg>
+            <!-- Text -->
+            <div>
+                <h3 class="text-lg font-semibold text-gray-800">CCCD (đối chiếu VNeID)</h3>
+                <p class="text-gray-600">Căn cước công dân đối chiếu với thông tin trên VNeID.</p>
+            </div>
+        </div>
+        <div class="grid grid-cols-4 gap-4 p-5 w-full">
+            <!-- Card 1 -->
+            <div class="border rounded-lg p-4 shadow-md">
+                <img src="https://n1-pstg.mioto.vn/cho_thue_xe_o_to_tu_lai_thue_xe_du_lich_hanoi/mitsubishi_outlander_premium_2022/p/g/2024/03/09/01/UIAx1kVhaI1l2sWBLOZM_g.jpg"
+                    alt="BENLY" class="w-full h-auto rounded-md mb-4">
+                <h2 class="text-lg font-bold">MITSUBISHI OUTLANDER</h2>
+                <p class="text-gray-500"><i class="fas fa-map-marker-alt"></i> Bình Thạnh, TP.HCM</p>
+                <div class="flex justify-between items-center my-2">
+                    <p class="text-gray-500 line-through"><i class="fas fa-dollar-sign"></i> 450k</p>
+                    <p class="text-teal-600 font-bold"><i class="fas fa-tag"></i> 420k/4 giờ</p>
+                </div>
+                <div class="flex justify-between items-center my-2">
+                    <p class="text-gray-500 line-through"><i class="fas fa-dollar-sign"></i> 950k</p>
+                    <p class="text-teal-600 font-bold"><i class="fas fa-tag"></i> 880k/24 giờ</p>
+                </div>
+                <div class="flex justify-between items-center my-2">
+                    <p class="text-gray-500"><i class="fas fa-users"></i> 6 chỗ</p>
+                    <p class="text-gray-500"><i class="fas fa-cogs"></i> Số tự động</p>
+                </div>
+                <button class="mt-4 bg-teal-600 text-white py-2 px-4 rounded hover:bg-teal-700"
+                    style="background-color: teal;">
+                    <i class="fas fa-car"></i> THUÊ XE NGAY
+                </button>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="border rounded-lg p-4 shadow-md">
+                <img src="https://n1-pstg.mioto.vn/cho_thue_xe_o_to_tu_lai_thue_xe_du_lich_hanoi/kia_sorento_luxury_2014/p/g/2024/07/06/01/5kHpSU_QayLm5lfUA3lR1A.jpg"
+                    alt="Mitsubishi Outlander 2020" class="w-full h-auto rounded-md mb-4">
+                <h2 class="text-lg font-bold">KIA SORENTO LUXURY 2014</h2>
+                <p class="text-gray-500"><i class="fas fa-map-marker-alt"></i> Quận 3, TP.HCM</p>
+                <div class="flex justify-between items-center my-2">
+                    <p class="text-gray-500 line-through"><i class="fas fa-dollar-sign"></i> 450k</p>
+                    <p class="text-teal-600 font-bold"><i class="fas fa-tag"></i> 350k/4 giờ</p>
+                </div>
+                <div class="flex justify-between items-center my-2">
+                    <p class="text-gray-500 line-through"><i class="fas fa-dollar-sign"></i> 950k</p>
+                    <p class="text-teal-600 font-bold"><i class="fas fa-tag"></i> 680k/24 giờ</p>
+                </div>
+                <div class="flex justify-between items-center my-2">
+                    <p class="text-gray-500"><i class="fas fa-users"></i> 4 chỗ</p>
+                    <p class="text-gray-500"><i class="fas fa-cogs"></i> Số tự động</p>
+                </div>
+                <button class="mt-4 bg-teal-600 text-white py-2 px-4 rounded hover:bg-teal-700"
+                    style="background-color: teal;">
+                    <i class="fas fa-car"></i> THUÊ XE NGAY
+                </button>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="border rounded-lg p-4 shadow-md">
+                <img src="https://n1-pstg.mioto.vn/cho_thue_xe_o_to_tu_lai_thue_xe_du_lich_hanoi/kia_sorento_deluxe_2014/p/g/2019/05/24/23/7L7lT76g7i_lce6-3u9Mvw.jpg"
+                    alt="Mitsubishi Outlander 2020" class="w-full h-auto rounded-md mb-4">
+                <h2 class="text-lg font-bold">KIA SORENTO DELUXE 2014</h2>
+                <p class="text-gray-500"><i class="fas fa-map-marker-alt"></i> Quận Ba Đình, Hà Nội</p>
+                <div class="flex justify-between items-center my-2">
+                    <p class="text-gray-500 line-through"><i class="fas fa-dollar-sign"></i> 450k</p>
+                    <p class="text-teal-600 font-bold"><i class="fas fa-tag"></i> 350k/4 giờ</p>
+                </div>
+                <div class="flex justify-between items-center my-2">
+                    <p class="text-gray-500 line-through"><i class="fas fa-dollar-sign"></i> 950k</p>
+                    <p class="text-teal-600 font-bold"><i class="fas fa-tag"></i> 680k/24 giờ</p>
+                </div>
+                <div class="flex justify-between items-center my-2">
+                    <p class="text-gray-500"><i class="fas fa-users"></i> 5 chỗ</p>
+                    <p class="text-gray-500"><i class="fas fa-cogs"></i> Số tự động</p>
+                </div>
+                <button class="mt-4 bg-teal-600 text-white py-2 px-4 rounded hover:bg-teal-700"
+                    style="background-color: teal;">
+                    <i class="fas fa-car"></i> THUÊ XE NGAY
+                </button>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="border rounded-lg p-4 shadow-md">
+                <img src="https://n1-pstg.mioto.vn/cho_thue_xe_o_to_tu_lai_thue_xe_du_lich_hanoi/honda_crv_g_2009/p/g/2024/02/19/16/eCHbWjLaXz4tfHvzZdi26w.jpg"
+                    alt="Mitsubishi Outlander 2020" class="w-full h-auto rounded-md mb-4">
+                <h2 class="text-lg font-bold">HONDA CRV G 2009</h2>
+                <p class="text-gray-500"><i class="fas fa-map-marker-alt"></i> Quận Cầu Giấy, Hà Nội</p>
+                <div class="flex justify-between items-center my-2">
+                    <p class="text-gray-500 line-through"><i class="fas fa-dollar-sign"></i> 450k</p>
+                    <p class="text-teal-600 font-bold"><i class="fas fa-tag"></i> 350k/4 giờ</p>
+                </div>
+                <div class="flex justify-between items-center my-2">
+                    <p class="text-gray-500 line-through"><i class="fas fa-dollar-sign"></i> 950k</p>
+                    <p class="text-teal-600 font-bold"><i class="fas fa-tag"></i> 680k/24 giờ</p>
+                </div>
+                <div class="flex justify-between items-center my-2">
+                    <p class="text-gray-500"><i class="fas fa-users"></i> 5 chỗ</p>
+                    <p class="text-gray-500"><i class="fas fa-cogs"></i> Số tự động</p>
+                </div>
+                <button class="mt-4 bg-teal-600 text-white py-2 px-4 rounded hover:bg-teal-700"
+                    style="background-color: teal;">
+                    <i class="fas fa-car"></i> THUÊ XE NGAY
+                </button>
+            </div>
+
+        </div>
+
+</html>
+
+
+</html>

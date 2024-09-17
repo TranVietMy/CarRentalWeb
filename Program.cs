@@ -44,4 +44,9 @@ app.MapControllerRoute(
     pattern: "/partners",
     defaults: new { controller = "Home", action = "Partners" }
 );
+app.MapControllerRoute(
+    name: "ProductDetail",
+    pattern: "/productdetail",
+    defaults: new { controller = "Home", action = "ProductDetail" }
+);
 app.Run();
