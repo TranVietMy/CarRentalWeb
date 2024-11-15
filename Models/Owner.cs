@@ -13,5 +13,5 @@ public partial class Owner
 
     public virtual User? User { get; set; }
 
-    public virtual ICollection<XeThue> XeThues { get; set; } = new List<XeThue>();
+        public virtual ICollection<XeThue> XeThues { get; set; } = new List<XeThue>();
 }

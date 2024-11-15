@@ -49,4 +49,14 @@ app.MapControllerRoute(
     pattern: "/productdetail",
     defaults: new { controller = "Home", action = "ProductDetail" }
 );
+app.MapControllerRoute(
+    name: "ThueXe",
+    pattern: "/thuexe",
+    defaults: new { controller = "Home", action = "ThueXe" }
+);
+app.MapControllerRoute(
+    name: " HopDong",
+    pattern: "/hopdong",
+    defaults: new { controller = "Admin", action = "HopDong" }
+);
 app.Run();

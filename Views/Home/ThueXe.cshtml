@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Car Rental Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gradient-to-r from-blue-50 to-indigo-100 py-12">
+    <div class="max-w-4xl mx-auto bg-white shadow-2xl rounded-lg p-10 mt-5">
+        <h2 class="text-3xl font-bold mb-6 text-center text-indigo-700">Car Rental Information Form</h2>
+        <form action="#" method="POST">
+            <!-- Car ID -->
+            <div class="mb-6">
+                <label for="carId" class="block text-sm font-medium text-gray-600 mb-2">Car ID</label>
+                <input type="text" id="carId" name="carId"
+                    class="w-full border-gray-300 rounded-lg shadow focus:ring-indigo-400 focus:border-indigo-400 p-3 transition duration-200"
+                    required>
+            </div>
+
+            <!-- Car Name -->
+            <div class="mb-6">
+                <label for="tenXe" class="block text-sm font-medium text-gray-600 mb-2">Car Name</label>
+                <input type="text" id="tenXe" name="tenXe"
+                    class="w-full border-gray-300 rounded-lg shadow focus:ring-indigo-400 focus:border-indigo-400 p-3 transition duration-200">
+            </div>
+
+            <!-- Number of Seats -->
+            <div class="mb-6">
+                <label for="soGhe" class="block text-sm font-medium text-gray-600 mb-2">Number of Seats</label>
+                <input type="number" id="soGhe" name="soGhe" min="1"
+                    class="w-full border-gray-300 rounded-lg shadow focus:ring-indigo-400 focus:border-indigo-400 p-3 transition duration-200">
+            </div>
+
+            <!-- Type -->
+            <div class="mb-6">
+                <label for="loai" class="block text-sm font-medium text-gray-600 mb-2">Type</label>
+                <input type="text" id="loai" name="loai"
+                    class="w-full border-gray-300 rounded-lg shadow focus:ring-indigo-400 focus:border-indigo-400 p-3 transition duration-200">
+            </div>
+
+            <!-- Fuel -->
+            <div class="mb-6">
+                <label for="nhienLieu" class="block text-sm font-medium text-gray-600 mb-2">Fuel</label>
+                <input type="text" id="nhienLieu" name="nhienLieu"
+                    class="w-full border-gray-300 rounded-lg shadow focus:ring-indigo-400 focus:border-indigo-400 p-3 transition duration-200">
+            </div>
+
+            <!-- Status -->
+            <div class="mb-6">
+                <label for="trangThai" class="block text-sm font-medium text-gray-600 mb-2">Status</label>
+                <select id="trangThai" name="trangThai"
+                    class="w-full border-gray-300 rounded-lg shadow focus:ring-indigo-400 focus:border-indigo-400 p-3 transition duration-200">
+                    <option value="">Select status...</option>
+                    <option value="Available">Available</option>
+                    <option value="Rented">Rented</option>
+                    <option value="Maintenance">Maintenance</option>
+                </select>
+            </div>
+
+            <!-- Location -->
+            <div class="mb-6">
+                <label for="diaDiem" class="block text-sm font-medium text-gray-600 mb-2">Location</label>
+                <input type="text" id="diaDiem" name="diaDiem"
+                    class="w-full border-gray-300 rounded-lg shadow focus:ring-indigo-400 focus:border-indigo-400 p-3 transition duration-200">
+            </div>
+
+            <!-- Description -->
+            <div class="mb-6">
+                <label for="moTa" class="block text-sm font-medium text-gray-600 mb-2">Description</label>
+                <textarea id="moTa" name="moTa" rows="3"
+                    class="w-full border-gray-300 rounded-lg shadow focus:ring-indigo-400 focus:border-indigo-400 p-3 transition duration-200"></textarea>
+            </div>
+
+            <!-- Daily Rental Price -->
+            <div class="mb-6">
+                <label for="giaThueNgay" class="block text-sm font-medium text-gray-600 mb-2">Daily Rental Price
+                    (VND)</label>
+                <input type="number" id="giaThueNgay" name="giaThueNgay" step="0.01" min="0"
+                    class="w-full border-gray-300 rounded-lg shadow focus:ring-indigo-400 focus:border-indigo-400 p-3 transition duration-200">
+            </div>
+
+            <!-- Hourly Rental Price -->
+            <div class="mb-6">
+                <label for="giaThueGio" class="block text-sm font-medium text-gray-600 mb-2">Hourly Rental Price
+                    (VND)</label>
+                <input type="number" id="giaThueGio" name="giaThueGio" step="0.01" min="0"
+                    class="w-full border-gray-300 rounded-lg shadow focus:ring-indigo-400 focus:border-indigo-400 p-3 transition duration-200">
+            </div>
+
+            <!-- Owner ID -->
+            <div class="mb-6">
+                <label for="ownId" class="block text-sm font-medium text-gray-600 mb-2">Owner ID</label>
+                <input type="text" id="ownId" name="ownId"
+                    class="w-full border-gray-300 rounded-lg shadow focus:ring-indigo-400 focus:border-indigo-400 p-3 transition duration-200">
+            </div>
+
+            <!-- Model ID -->
+            <div class="mb-6">
+                <label for="modelId" class="block text-sm font-medium text-gray-600 mb-2">Model ID</label>
+                <input type="text" id="modelId" name="modelId"
+                    class="w-full border-gray-300 rounded-lg shadow focus:ring-indigo-400 focus:border-indigo-400 p-3 transition duration-200">
+            </div>
+
+            <!-- Avatar (Image URL) -->
+            <div class="mb-6">
+                <label for="avatar" class="block text-sm font-medium text-gray-600 mb-2">Avatar (Image URL)</label>
+                <input type="url" id="avatar" name="avatar"
+                    class="w-full border-gray-300 rounded-lg shadow focus:ring-indigo-400 focus:border-indigo-400 p-3 transition duration-200">
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="flex justify-end">
+                <button type="reset"
+                    class="bg-gray-300 hover:bg-gray-400 text-gray-700 py-3 px-6 rounded-lg shadow-lg mr-4 transition duration-300 ease-in-out">Reset</button>
+                <button type="submit"
+                    class="bg-indigo-600 hover:bg-indigo-700 text-white py-3 px-6 rounded-lg shadow-lg transition duration-300 ease-in-out">Submit</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

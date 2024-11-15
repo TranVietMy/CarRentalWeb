@@ -18,7 +18,10 @@ public class HomeController : Controller
     {
         return View();
     }
-
+ public IActionResult ThueXe()
+    {
+        return View();
+    }
     public IActionResult Lookup()
     {
         return View();
