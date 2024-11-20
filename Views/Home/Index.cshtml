@@ -16,7 +16,7 @@
       <h2 class="mb-4 text-xl font-semibold">Bạn cần thuê xe ?</h2>
       <form>
         <!-- Option Vehicle Type -->
-        <div class="mb-4 flex space-x-4">
+        @* <div class="mb-4 flex space-x-4">
           <label class="flex items-center">
             <input type="radio" name="vehicle" class="form-radio text-blue-600" checked />
             <span class="ml-2">Ô tô</span>
@@ -25,7 +25,7 @@
             <input type="radio" name="vehicle" class="form-radio text-blue-600" />
             <span class="ml-2">Xe máy</span>
           </label>
-        </div>
+        </div> *@
 
         <!-- Location Select -->
         <div class="mb-4">
@@ -197,202 +197,37 @@
     </ul>
   </div>
 </section>
+@model CarRental.Models.CarViewModel
 
 <div class="grid grid-cols-4 gap-4 p-5">
-  <a href="/productdetail">
+
+  @foreach(var xeThue in Model.XeThues){
+  <a href="@Url.Action("ProductDetail", "Home", new { id = xeThue?.CarId })">
     <!-- Card 1 -->
     <div class="border rounded-lg p-4 shadow-md">
       <img
-        src="https://n1-pstg.mioto.vn/cho_thue_xe_o_to_tu_lai_thue_xe_du_lich_hanoi/mitsubishi_outlander_premium_2022/p/g/2024/03/09/01/UIAx1kVhaI1l2sWBLOZM_g.jpg"
+        src="@xeThue?.Avatar"
         alt="BENLY" class="w-full h-auto rounded-md mb-4">
-      <h2 class="text-lg font-bold">MITSUBISHI OUTLANDER</h2>
-      <p class="text-gray-500"><i class="fas fa-map-marker-alt"></i> Bình Thạnh, TP.HCM</p>
+      <h2 class="text-lg font-bold">@xeThue?.TenXe</h2>
+      <p class="text-gray-500"><i class="fas fa-map-marker-alt"></i>@xeThue?.DiaDiem</p>
       <div class="flex justify-between items-center my-2">
-        <p class="text-gray-500 line-through"><i class="fas fa-dollar-sign"></i> 450k</p>
-        <p class="text-teal-600 font-bold"><i class="fas fa-tag"></i> 420k/4 giờ</p>
+        <p class="text-gray-500 line-through"><i class="fas fa-dollar-sign"></i> @xeThue?.GiaThueGio </p>
+        <p class="text-teal-600 font-bold"><i class="fas fa-tag"></i>@xeThue?.GiaThueGio k/4 giờ</p>
       </div>
       <div class="flex justify-between items-center my-2">
-        <p class="text-gray-500 line-through"><i class="fas fa-dollar-sign"></i> 950k</p>
-        <p class="text-teal-600 font-bold"><i class="fas fa-tag"></i> 880k/24 giờ</p>
+        <p class="text-gray-500 line-through"><i class="fas fa-dollar-sign"></i>@xeThue?.GiaThueNgay k</p>
+        <p class="text-teal-600 font-bold"><i class="fas fa-tag"></i>@xeThue?.GiaThueNgay k/24 giờ</p>
       </div>
       <div class="flex justify-between items-center my-2">
-        <p class="text-gray-500"><i class="fas fa-users"></i> 6 chỗ</p>
-        <p class="text-gray-500"><i class="fas fa-cogs"></i> Số tự động</p>
-      </div>
-      <button class="mt-4 bg-teal-600 text-white py-2 px-4 rounded hover:bg-teal-700" style="background-color: teal;">
-        <i class="fas fa-car"></i> THUÊ XE NGAY
-      </button>
-    </div>
-  </a>
-  <!-- Card 2 -->
-  <div class="border rounded-lg p-4 shadow-md">
-    <img
-      src="https://n1-pstg.mioto.vn/cho_thue_xe_o_to_tu_lai_thue_xe_du_lich_hanoi/kia_sorento_luxury_2014/p/g/2024/07/06/01/5kHpSU_QayLm5lfUA3lR1A.jpg"
-      alt="Mitsubishi Outlander 2020" class="w-full h-auto rounded-md mb-4">
-    <h2 class="text-lg font-bold">KIA SORENTO LUXURY 2014</h2>
-    <p class="text-gray-500"><i class="fas fa-map-marker-alt"></i> Quận 3, TP.HCM</p>
-    <div class="flex justify-between items-center my-2">
-      <p class="text-gray-500 line-through"><i class="fas fa-dollar-sign"></i> 450k</p>
-      <p class="text-teal-600 font-bold"><i class="fas fa-tag"></i> 350k/4 giờ</p>
-    </div>
-    <div class="flex justify-between items-center my-2">
-      <p class="text-gray-500 line-through"><i class="fas fa-dollar-sign"></i> 950k</p>
-      <p class="text-teal-600 font-bold"><i class="fas fa-tag"></i> 680k/24 giờ</p>
-    </div>
-    <div class="flex justify-between items-center my-2">
-      <p class="text-gray-500"><i class="fas fa-users"></i> 4 chỗ</p>
-      <p class="text-gray-500"><i class="fas fa-cogs"></i> Số tự động</p>
-    </div>
-    <button class="mt-4 bg-teal-600 text-white py-2 px-4 rounded hover:bg-teal-700" style="background-color: teal;">
-      <i class="fas fa-car"></i> THUÊ XE NGAY
-    </button>
-  </div>
-
-  <!-- Card 3 -->
-  <div class="border rounded-lg p-4 shadow-md">
-    <img
-      src="https://n1-pstg.mioto.vn/cho_thue_xe_o_to_tu_lai_thue_xe_du_lich_hanoi/kia_sorento_deluxe_2014/p/g/2019/05/24/23/7L7lT76g7i_lce6-3u9Mvw.jpg"
-      alt="Mitsubishi Outlander 2020" class="w-full h-auto rounded-md mb-4">
-    <h2 class="text-lg font-bold">KIA SORENTO DELUXE 2014</h2>
-    <p class="text-gray-500"><i class="fas fa-map-marker-alt"></i> Quận Ba Đình, Hà Nội</p>
-    <div class="flex justify-between items-center my-2">
-      <p class="text-gray-500 line-through"><i class="fas fa-dollar-sign"></i> 450k</p>
-      <p class="text-teal-600 font-bold"><i class="fas fa-tag"></i> 350k/4 giờ</p>
-    </div>
-    <div class="flex justify-between items-center my-2">
-      <p class="text-gray-500 line-through"><i class="fas fa-dollar-sign"></i> 950k</p>
-      <p class="text-teal-600 font-bold"><i class="fas fa-tag"></i> 680k/24 giờ</p>
-    </div>
-    <div class="flex justify-between items-center my-2">
-      <p class="text-gray-500"><i class="fas fa-users"></i> 5 chỗ</p>
-      <p class="text-gray-500"><i class="fas fa-cogs"></i> Số tự động</p>
-    </div>
-    <button class="mt-4 bg-teal-600 text-white py-2 px-4 rounded hover:bg-teal-700" style="background-color: teal;">
-      <i class="fas fa-car"></i> THUÊ XE NGAY
-    </button>
-  </div>
-
-  <!-- Card 4 -->
-  <div class="border rounded-lg p-4 shadow-md">
-    <img
-      src="https://n1-pstg.mioto.vn/cho_thue_xe_o_to_tu_lai_thue_xe_du_lich_hanoi/honda_crv_g_2009/p/g/2024/02/19/16/eCHbWjLaXz4tfHvzZdi26w.jpg"
-      alt="Mitsubishi Outlander 2020" class="w-full h-auto rounded-md mb-4">
-    <h2 class="text-lg font-bold">HONDA CRV G 2009</h2>
-    <p class="text-gray-500"><i class="fas fa-map-marker-alt"></i> Quận Cầu Giấy, Hà Nội</p>
-    <div class="flex justify-between items-center my-2">
-      <p class="text-gray-500 line-through"><i class="fas fa-dollar-sign"></i> 450k</p>
-      <p class="text-teal-600 font-bold"><i class="fas fa-tag"></i> 350k/4 giờ</p>
-    </div>
-    <div class="flex justify-between items-center my-2">
-      <p class="text-gray-500 line-through"><i class="fas fa-dollar-sign"></i> 950k</p>
-      <p class="text-teal-600 font-bold"><i class="fas fa-tag"></i> 680k/24 giờ</p>
-    </div>
-    <div class="flex justify-between items-center my-2">
-      <p class="text-gray-500"><i class="fas fa-users"></i> 5 chỗ</p>
-      <p class="text-gray-500"><i class="fas fa-cogs"></i> Số tự động</p>
-    </div>
-    <button class="mt-4 bg-teal-600 text-white py-2 px-4 rounded hover:bg-teal-700" style="background-color: teal;">
-      <i class="fas fa-car"></i> THUÊ XE NGAY
-    </button>
-  </div>
-
-  <!-- Card 5 -->
-  <div class="border rounded-lg p-4 shadow-md">
-    <img
-      src="https://n1-pstg.mioto.vn/cho_thue_xe_o_to_tu_lai_thue_xe_du_lich_hanoi/mitsubishi_outlander_2020/p/g/2021/07/13/15/cntq--9bNnW16Lc9QIugSw.jpg"
-      alt="Mitsubishi Outlander 2020" class="w-full h-auto rounded-md mb-4">
-    <h2 class="text-lg font-bold">MITSUBISHI OUTLANDER 2020</h2>
-    <p class="text-gray-500"><i class="fas fa-map-marker-alt"></i> Quận Bắc Từ Liêm, Hà Nội</p>
-    <div class="flex justify-between items-center my-2">
-      <p class="text-gray-500 line-through"><i class="fas fa-dollar-sign"></i> 450k</p>
-      <p class="text-teal-600 font-bold"><i class="fas fa-tag"></i> 350k/4 giờ</p>
-    </div>
-    <div class="flex justify-between items-center my-2">
-      <p class="text-gray-500 line-through"><i class="fas fa-dollar-sign"></i> 950k</p>
-      <p class="text-teal-600 font-bold"><i class="fas fa-tag"></i> 680k/24 giờ</p>
-    </div>
-    <div class="flex justify-between items-center my-2">
-      <p class="text-gray-500"><i class="fas fa-users"></i> 7 chỗ</p>
-      <p class="text-gray-500"><i class="fas fa-cogs"></i> Số tự động</p>
-    </div>
-    <button class="mt-4 bg-teal-600 text-white py-2 px-4 rounded hover:bg-teal-700" style="background-color: teal;">
-      <i class="fas fa-car"></i> THUÊ XE NGAY
-    </button>
-  </div>
-
-  <!-- Card 6 -->
-  <a href="/productdetail">
-    <div class="border rounded-lg p-4 shadow-md">
-      <img
-        src="https://n1-pstg.mioto.vn/cho_thue_xe_o_to_tu_lai_thue_xe_du_lich_hanoi/mitsubishi_xpander_2024/p/g/2024/05/03/11/cxZ7Yv1UPY8Pbk2sbQrWWg.jpg"
-        alt="TOYOTA INNOVA 2017" class="w-full h-auto rounded-md mb-4">
-      <h2 class="text-lg font-bold">TOYOTA INNOVA 2017</h2>
-      <p class="text-gray-500"><i class="fas fa-map-marker-alt"></i> Quận Tân Phú, TP.HCM</p>
-      <div class="flex justify-between items-center my-2">
-        <p class="text-gray-500 line-through"><i class="fas fa-dollar-sign"></i> 600k</p>
-        <p class="text-teal-600 font-bold"><i class="fas fa-tag"></i> 500k/4 giờ</p>
-      </div>
-      <div class="flex justify-between items-center my-2">
-        <p class="text-gray-500 line-through"><i class="fas fa-dollar-sign"></i> 1.200k</p>
-        <p class="text-teal-600 font-bold"><i class="fas fa-tag"></i> 900k/24 giờ</p>
-      </div>
-      <div class="flex justify-between items-center my-2">
-        <p class="text-gray-500"><i class="fas fa-users"></i> 7 chỗ</p>
-        <p class="text-gray-500"><i class="fas fa-cogs"></i> Số tự động</p>
+        <p class="text-gray-500"><i class="fas fa-users"></i> @xeThue?.SoGhe chỗ</p>
+        <p class="text-gray-500"><i class="fas fa-cogs"></i> @xeThue?.Loai</p>
       </div>
       <button class="mt-4 bg-teal-600 text-white py-2 px-4 rounded hover:bg-teal-700" style="background-color: teal;">
         <i class="fas fa-car"></i> THUÊ XE NGAY
       </button>
     </div>
   </a>
-
-  <!-- Card 7 -->
-  <div class="border rounded-lg p-4 shadow-md">
-    <img
-      src="https://n1-pstg.mioto.vn/cho_thue_xe_o_to_tu_lai_thue_xe_du_lich_hanoi/mitsubishi_xpander_2022/p/g/2022/11/14/20/RpqXyGBcV9d2OgRrpxLhSg.jpg"
-      alt="FORD EVEREST TITANIUM 2020" class="w-full h-auto rounded-md mb-4">
-    <h2 class="text-lg font-bold">FORD EVEREST TITANIUM 2020</h2>
-    <p class="text-gray-500"><i class="fas fa-map-marker-alt"></i> Quận 2, TP.HCM</p>
-    <div class="flex justify-between items-center my-2">
-      <p class="text-gray-500 line-through"><i class="fas fa-dollar-sign"></i> 700k</p>
-      <p class="text-teal-600 font-bold"><i class="fas fa-tag"></i> 600k/4 giờ</p>
-    </div>
-    <div class="flex justify-between items-center my-2">
-      <p class="text-gray-500 line-through"><i class="fas fa-dollar-sign"></i> 1.400k</p>
-      <p class="text-teal-600 font-bold"><i class="fas fa-tag"></i> 1.100k/24 giờ</p>
-    </div>
-    <div class="flex justify-between items-center my-2">
-      <p class="text-gray-500"><i class="fas fa-users"></i> 6 chỗ</p>
-      <p class="text-gray-500"><i class="fas fa-cogs"></i> Số tự động</p>
-    </div>
-    <button class="mt-4 bg-teal-600 text-white py-2 px-4 rounded hover:bg-teal-700" style="background-color: teal;">
-      <i class="fas fa-car"></i> THUÊ XE NGAY
-    </button>
-  </div>
-
-  <!-- Card 8 -->
-  <div class="border rounded-lg p-4 shadow-md">
-    <img
-      src="https://n1-pstg.mioto.vn/cho_thue_xe_o_to_tu_lai_thue_xe_du_lich_hanoi/vinfast_fadil_2020/p/g/2023/02/23/21/Be9RCqLCqGe4QLTvaJthMQ.jpg"
-      alt="MERCEDES-BENZ GLE 2020" class="w-full h-auto rounded-md mb-4">
-    <h2 class="text-lg font-bold">MERCEDES-BENZ GLE 2020</h2>
-    <p class="text-gray-500"><i class="fas fa-map-marker-alt"></i> Quận Phú Nhuận, TP.HCM</p>
-    <div class="flex justify-between items-center my-2">
-      <p class="text-gray-500 line-through"><i class="fas fa-dollar-sign"></i> 1.200k</p>
-      <p class="text-teal-600 font-bold"><i class="fas fa-tag"></i> 1.000k/4 giờ</p>
-    </div>
-    <div class="flex justify-between items-center my-2">
-      <p class="text-gray-500 line-through"><i class="fas fa-dollar-sign"></i> 2.200k</p>
-      <p class="text-teal-600 font-bold"><i class="fas fa-tag"></i> 2.000k/24 giờ</p>
-    </div>
-    <div class="flex justify-between items-center my-2">
-      <p class="text-gray-500"><i class="fas fa-users"></i> 5 chỗ</p>
-      <p class="text-gray-500"><i class="fas fa-cogs"></i> Số tự động</p>
-    </div>
-    <button class="mt-4 bg-teal-600 text-white py-2 px-4 rounded hover:bg-teal-700" style="background-color: teal;">
-      <i class="fas fa-car"></i> THUÊ XE NGAY
-    </button>
-  </div>
+  }
 </div>
 <div class="w-full flex justify-center">
   <button class="mt-4 mx-auto bg-teal-600  text-white py-2 px-4 rounded hover:bg-teal-700"

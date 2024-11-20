@@ -1,8 +1,19 @@
+using CarRental.Models;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-
+builder.Services.AddDbContext<QuanLyXeThueContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("MyDbConnection")));
+builder.Services.AddDistributedMemoryCache();
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromMinutes(30); // Th?i gian h?t h?n phiên
+    options.Cookie.HttpOnly = true; // Ch? cho phép truy c?p cookie qua HTTP
+    options.Cookie.IsEssential = true; // Cookie c?n thi?t cho ?ng d?ng
+});
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -13,6 +24,7 @@ if (!app.Environment.IsDevelopment())
 app.UseStaticFiles();
 
 app.UseRouting();
+app.UseSession();
 
 app.UseAuthorization();
 

@@ -7,23 +7,28 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Car Rental Listing</title>
 </head>
+@model CarRental.Models.XeThue
 <div class="mx-auto bg-white p-6 shadow-md rounded-lg m-5">
     <!-- Thông tin xe -->
     <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-5">
         <div>
-            <h2 class="text-2xl font-bold text-gray-800">MERCEDES C200 2016</h2>
+            <h2 class="text-2xl font-bold text-gray-800">@Model.TenXe</h2>
             <div class="flex items-center text-gray-600 space-x-2 mt-2">
                 <span class="text-yellow-500">★ 5.0</span>
                 <span>•</span>
                 <span>21 chuyến</span>
                 <span>•</span>
-                <span>Quận 3, Tp.HCM</span>
+                <span>@Model.DiaDiem</span>
             </div>
         </div>
         <!-- Thêm giá tiền -->
         <div class="text-right justify-end">
-            <span class="line-through text-gray-500 text-lg">1.500.000₫</span>
-            <span class="text-red-500 text-xl font-bold ml-2">1.200.000₫</span>
+            <span class="line-through text-gray-500 text-lg">@Model.GiaThueNgay k/24h</span>
+            <span class="text-red-500 text-xl font-bold ml-2">@Model.GiaThueNgay k/24h</span>
+        </div>
+        <div class="text-right justify-end">
+            <span class="line-through text-gray-500 text-lg">@Model.GiaThueGio k/h</span>
+            <span class="text-red-500 text-xl font-bold ml-2">@Model.GiaThueGio k/h</span>
         </div>
         <button class="mt-4 lg:mt-0 bg-teal-600 text-white font-semibold py-2 px-4 rounded-md">Thuê xe ngay</button>
     </div>
@@ -32,19 +37,15 @@
     <div class="grid grid-cols-1 lg:grid-cols-4 gap-4 mb-6">
         <div class="lg:col-span-3">
             <img class="w-full h-auto rounded-md border-2 border-blue-300"
-                src="https://n1-pstg.mioto.vn/cho_thue_xe_o_to_tu_lai_thue_xe_du_lich_hochiminh/mercedes_c200_2016/p/g/2024/02/20/22/rvBU3hcqRb0bOUijNyiAhA.jpg"
+                src="@Model.Avatar"
                 alt="Main Car Image">
         </div>
         <div class="grid grid-cols-1 gap-4">
+            @foreach(var img in Model.XeImgs.Take(3)){
             <img class="w-full h-auto rounded-md border-2 border-gray-300"
-                src="https://n1-pstg.mioto.vn/cho_thue_xe_o_to_tu_lai_thue_xe_du_lich_hochiminh/mercedes_c200_2016/p/g/2024/02/20/22/U9OhVvwg1OQm7hYVQPhsgQ.jpg"
+                src="@img.Img"
                 alt="Side Image 1">
-            <img class="w-full h-auto rounded-md border-2 border-gray-300"
-                src="https://n1-pstg.mioto.vn/cho_thue_xe_o_to_tu_lai_thue_xe_du_lich_hochiminh/mercedes_c200_2016/p/g/2024/02/20/22/SfVGFDkdC6VUi-stFH6aXg.jpg"
-                alt="Side Image 2">
-            <img class="w-full h-auto rounded-md border-2 border-gray-300"
-                src="https://n1-pstg.mioto.vn/cho_thue_xe_o_to_tu_lai_thue_xe_du_lich_hochiminh/mercedes_c200_2016/p/g/2024/02/20/22/akV8-6sb8MrAwPGZG3kwNQ.jpg"
-                alt="Side Image 3">
+           }
         </div>
     </div>
 
@@ -62,13 +63,13 @@
     <hr class="mb-5">
     <div class="grid grid-cols-1 lg:grid-cols-4 text-center gap-4 mb-5">
         <div>
-            <p class="text-gray-600"><strong>Số ghế:</strong> 4 chỗ</p>
+            <p class="text-gray-600"><strong>Số ghế:</strong> @Model.SoGhe chỗ</p>
         </div>
         <div>
-            <p class="text-gray-600"><strong>Truyền động:</strong> Số tự động</p>
+            <p class="text-gray-600"><strong>Truyền động:</strong> @Model.Loai</p>
         </div>
         <div>
-            <p class="text-gray-600"><strong>Nhiên liệu:</strong> Xăng</p>
+            <p class="text-gray-600"><strong>Nhiên liệu:</strong> @Model.NhienLieu</p>
         </div>
         <div>
             <p class="text-gray-600"><strong>NL tiêu hao:</strong> 6 lít/100km</p>
@@ -79,54 +80,18 @@
     <!-- Mô tả -->
     <h3 class="text-xl font-semibold text-gray-800 mb-4">Mô tả</h3>
     <p class="text-gray-600 mb-5">
-        MG5 LUXURY 2023 Trắng <br>
-        Xe gia đình mới lấy ODO 3000km <br>
-        + Trang bị đủ tính năng: <br>
-        - Cruise Control & Auto Hold <br>
-        - Cân bằng điện tử <br>
-        - Áp suất lốp <br>
-        - Cam 360
+       @Model.MoTa
     </p>
     <div class="container mx-auto px-4">
         <h2 class="text-2xl font-bold mb-4">Các tiện nghi khác</h2>
         <ul class="grid grid-cols-3 gap-4">
+            @foreach(var feat in Model.Feats)
+            {
             <li class="flex items-center">
-                <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round"   stroke-linejoin="round" stroke-width="2"
-                        d="M17 9V7m4 0a3 3 0 01-3 3v4a3 3 0 01-3-3H5a2 2 0 00-2 2v6a2 2 0 002 2h14a2 2 0 002-2v-6a2 2 0 00-2-2z">
-                    </path>
-                </svg>
-                <span>Bản đồ (Map)</span>
+                <img class="w-6 h-6 mr-2 block" src="@feat.FeatImg" alt="@feat.TenTinhNang" />
+                <span>@feat.TenTinhNang</span>
             </li>
-
-            <li class="flex items-center">
-                <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path  
-                        d="M16 8a4 4 0 11-8 0 4 4 0 018 0zM12 2c2.21 0 4 1.79 4 4s-1.79 4-4 4-4-1.79-4-4 1.79-4 4-4zM9.33 17.33l2.83-2.83a1 1 0 00-1.41-1.41L4.83 12.03a1 1 0 00-1.41 1.41l2.83 2.83a1 1 0 001.41 0z">
-                    </path>
-                </svg>
-                <span>Bluetooth</span>
-            </li>
-
-            <li class="flex items-center">
-                <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path   d="M12 14a2 2 0 11-4 0 2 2 0 014 0zM4 2v20h16V2a2 2 0 00-2-2H4z"></path>
-                </svg>
-                <span>Camera 360</span>
-            </li>
-
-            <li class="flex items-center">
-                <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round"   stroke-linejoin="round" stroke-width="2"
-                        d="M17 11V7m0 0l-8-4-4 4V11m16 0V7a2 2 0 00-2-2H5a2 2 0 00-2 2v4m16 0h-1v7a2 2 0 01-2 2H5a2 2 0 01-2-2v-7h-1z">
-                    </path>
-                </svg>
-                <span>Camera hành trình (Dashcam)</span>
-            </li>
+            }
         </ul>
     </div>
 
