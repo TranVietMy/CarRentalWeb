@@ -1,22 +1,29 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using CarRental.Models;
-
+using System.Text.Json;
+using Microsoft.EntityFrameworkCore;
 namespace CarRental.Controllers;
 
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
-
-    public HomeController(ILogger<HomeController> logger)
+    private readonly QuanLyXeThueContext _quanLyXeThueContext;
+ 
+    public HomeController(ILogger<HomeController> logger,QuanLyXeThueContext quanLyXeThueContext)
     {
         _logger = logger;
+        _quanLyXeThueContext=quanLyXeThueContext;
     }
 
 
     public IActionResult Index()
+    {var xeThues = _quanLyXeThueContext.XeThues.ToList();
+    var viewModel = new CarViewModel
     {
-        return View();
+        XeThues = xeThues
+    };
+    return View(viewModel);
     }
  public IActionResult ThueXe()
     {
@@ -30,9 +37,11 @@ public class HomeController : Controller
     {
          return View();
     }
-   public IActionResult ProductDetail ()
-    {
-         return View();
+    [Route("Home/ProductDetail/{id}")]
+   public IActionResult ProductDetail (string id)
+    {var xeThue = _quanLyXeThueContext.XeThues.Include(x=>x.Feats).Include(x=>x.XeImgs).FirstOrDefault(x => x.CarId == id);
+
+         return View(xeThue);
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
