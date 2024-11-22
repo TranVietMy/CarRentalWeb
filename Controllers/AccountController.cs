@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Http;
 using CarRental.Models;
 using Microsoft.EntityFrameworkCore;
-using BCrypt.Net;
+
 
 namespace CarRental.Controllers
 {
@@ -69,20 +69,54 @@ namespace CarRental.Controllers
 
         // Xử lý dữ liệu đăng nhập
         [HttpPost]
-        public async Task<IActionResult> LoginModel(string username, string password)
+        public async Task<IActionResult> LoginModel(string Phone, string password)
         {
-            var user = await _context.Users.SingleOrDefaultAsync(u => u.UserName == username);
-            if (user != null && BCrypt.Net.BCrypt.Verify(password, user.Password))
+            var user = await _context.Users.SingleOrDefaultAsync(u => u.Phone == Phone);
+             if (user != null && password == user.Password)
             {
-                // Thiết lập session cho người dùng
-                HttpContext.Session.SetString("UserID", user.UserId);
-                HttpContext.Session.SetString("Username", user.UserName);
-
-                return RedirectToAction("Index", "Home");
+        // Thiết lập session cho người dùng
+        HttpContext.Session.SetString("UserID", user.UserId.ToString());
+        HttpContext.Session.SetString("Phone", user.Phone);
+        HttpContext.Session.SetString("UserRole", user.Role);
+        HttpContext.Session.SetString("UserName", user.UserName);
+        if (user.Role == "Admin")
+        {
+          
+            return RedirectToAction("HopDong", "Admin");
+        }
+        else if (user.Role == "Owner")
+        {
+            
+            var owner = await _context.Owners.SingleOrDefaultAsync(o => o.UserId == user.UserId);
+            if (owner != null)
+            {
+                HttpContext.Session.SetString("OwnerID", owner.OwnId.ToString()); 
+                return RedirectToAction("Accept", "Owner");
             }
+            else
+            {
+                ModelState.AddModelError("", "Owner information not found.");
+                return View("Login", "Account"); 
+            }
+        }
+        else if (user.Role == "Customer")
+        {
+            
+            return RedirectToAction("Index", "Home");
+        }
+            }
+            else{ModelState.AddModelError("", "Không tồn tại số điện thoại hoặc sai mật khẩu");
+            return RedirectToAction("Login", "Account");
+            }
+            
 
-            ModelState.AddModelError("", "Invalid username or password.");
+            
             return View();
+        }
+         public IActionResult Logout()
+        {
+            HttpContext.Session.Clear(); // Xóa session khi đăng xuất
+            return RedirectToAction("Index","Home");
         }
 
         private string GenerateRandomString(int length)

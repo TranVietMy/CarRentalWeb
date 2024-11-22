@@ -7,119 +7,235 @@
     <title>Enhanced Car Rental Form</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-
+@model CarRental.Models.ThueXeViewModel
 <body class="bg-gradient-to-r from-blue-50 to-indigo-100 py-12">
-    <div class="max-w-4xl mx-auto bg-white shadow-2xl rounded-lg p-10 mt-5">
-        <h2 class="text-3xl font-bold mb-6 text-center text-indigo-700">Car Rental Information Form</h2>
-        <form action="#" method="POST">
-            <!-- Car ID -->
-            <div class="mb-6">
-                <label for="carId" class="block text-sm font-medium text-gray-600 mb-2">Car ID</label>
-                <input type="text" id="carId" name="carId"
-                    class="w-full border-gray-300 rounded-lg shadow focus:ring-indigo-400 focus:border-indigo-400 p-3 transition duration-200"
-                    required>
-            </div>
+   
+    <div class="max-w-6xl mx-auto bg-white shadow-2xl rounded-lg p-12 mt-5">
+        <h2 class="text-4xl font-bold mb-8 text-center text-teal-700">Car Rental Information</h2>
+        
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+       
+            <div class="w-full">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
 
-            <!-- Car Name -->
-            <div class="mb-6">
-                <label for="tenXe" class="block text-sm font-medium text-gray-600 mb-2">Car Name</label>
-                <input type="text" id="tenXe" name="tenXe"
-                    class="w-full border-gray-300 rounded-lg shadow focus:ring-indigo-400 focus:border-indigo-400 p-3 transition duration-200">
+        <div class="bg-white shadow-md rounded-lg overflow-hidden">
+            <div class="py-3 px-6 font-semibold text-teal-600">Tên xe</div>
+            <div class="py-3 px-6">@Model.TenXe</div>
+        </div>
+    
+        <div class="bg-white shadow-md rounded-lg overflow-hidden">
+            <div class="py-3 px-6 font-semibold text-teal-600">Số chỗ</div>
+            <div class="py-3 px-6">@Model.SoGhe</div>
+        </div>
+       
+        <div class="bg-white shadow-md rounded-lg overflow-hidden">
+            <div class="py-3 px-6 font-semibold text-teal-600">Loại</div>
+            <div class="py-3 px-6">@Model.Loai</div>
+        </div>
+  
+        <div class="bg-white shadow-md rounded-lg overflow-hidden">
+            <div class="py-3 px-6 font-semibold text-teal-600">Nhiên liệu</div>
+            <div class="py-3 px-6">@Model.NhienLieu</div>
+        </div>
+    
+        <div class="bg-white shadow-md rounded-lg overflow-hidden">
+            <div class="py-3 px-6 font-semibold text-teal-600">Địa điểm</div>
+            <div class="py-3 px-6">@Model.DiaDiem</div>
+        </div>
+      
+        <div class="bg-white shadow-md rounded-lg overflow-hidden">
+            <div class="py-3 px-6 font-semibold text-teal-600">Mô tả</div>
+            <div class="py-3 px-6">@Model.MoTa</div>
+        </div>
+      
+        <div class="bg-white shadow-md rounded-lg overflow-hidden">
+            <div class="py-3 px-6 font-semibold text-teal-600">Giá theo ngày</div>
+            <div class="py-3 px-6">@Model.GiaThueNgay K VND</div>
+        </div>
+     
+        <div class="bg-white shadow-md rounded-lg overflow-hidden">
+            <div class="py-3 px-6 font-semibold text-teal-600">Giá theo giờ (4h)</div>
+            <div class="py-3 px-6">@Model.GiaThueGio K VND</div>
+        </div>
+        
+        <div class="bg-white shadow-md rounded-lg overflow-hidden">
+            <div class="py-3 px-6 font-semibold text-teal-600">Avatar</div>
+            <div class="py-3 px-6">
+                <img src="@Model.Avatar" alt="Car Avatar" class="w-32 h-20 object-cover mx-auto">
             </div>
+        </div>
+    </div>
+</div>
+            <div class="w-full">
+                <h3 class="text-2xl font-semibold text-teal-700 mb-6">Nhập thông tin thuê xe</h3>
+                <form asp-action="Create" method="POST">
+                    <input type="hidden" name="CarId" value="@Model.CarId" />
+                    <input type="hidden" name="TenXe" value="@Model.TenXe" />
+                    <input type="hidden" name="SoGhe" value="@Model.SoGhe" />
+                    <input type="hidden" name="Loai" value="@Model.Loai" />
+                    <input type="hidden" name="NhienLieu" value="@Model.NhienLieu" />
+                    <input type="hidden" name="MoTa" value="@Model.MoTa" />
+                    <input type="hidden" name="Avatar" value="@Model.Avatar" />
+                    <input type="hidden" name="TongPhi" value="@Model.TongPhi" />
+                    <input type="hidden" name="GiaThueGio" value="@Model.GiaThueGio" />
+                    <input type="hidden" name="DiaDiem" value="@Model.DiaDiem" />
 
-            <!-- Number of Seats -->
-            <div class="mb-6">
-                <label for="soGhe" class="block text-sm font-medium text-gray-600 mb-2">Number of Seats</label>
-                <input type="number" id="soGhe" name="soGhe" min="1"
-                    class="w-full border-gray-300 rounded-lg shadow focus:ring-indigo-400 focus:border-indigo-400 p-3 transition duration-200">
-            </div>
 
-            <!-- Type -->
-            <div class="mb-6">
-                <label for="loai" class="block text-sm font-medium text-gray-600 mb-2">Type</label>
-                <input type="text" id="loai" name="loai"
-                    class="w-full border-gray-300 rounded-lg shadow focus:ring-indigo-400 focus:border-indigo-400 p-3 transition duration-200">
-            </div>
 
-            <!-- Fuel -->
-            <div class="mb-6">
-                <label for="nhienLieu" class="block text-sm font-medium text-gray-600 mb-2">Fuel</label>
-                <input type="text" id="nhienLieu" name="nhienLieu"
-                    class="w-full border-gray-300 rounded-lg shadow focus:ring-indigo-400 focus:border-indigo-400 p-3 transition duration-200">
-            </div>
+<div class="mb-8">
+    <label for="PhuongThucThue" class="block text-sm font-medium text-gray-600 mb-2">Phương Thức Thuê</label>
+    <select id="PhuongThucThue" name="PhuongThucThue"
+    class="w-full border-gray-300 rounded-lg shadow focus:ring-teal-400 focus:border-teal-400 p-4 transition duration-200"
+    onchange="toggleNgayKetThuc(); calculateFees();">
+    <option value="Thuê ngày" selected="@(Model.PhuongThucThue == "Thuê ngày")">Thuê ngày</option>
+<option value="Thuê 4 giờ" selected="@(Model.PhuongThucThue == "Thuê 4 giờ")">Thuê 4 giờ</option>
 
-            <!-- Status -->
-            <div class="mb-6">
-                <label for="trangThai" class="block text-sm font-medium text-gray-600 mb-2">Status</label>
-                <select id="trangThai" name="trangThai"
-                    class="w-full border-gray-300 rounded-lg shadow focus:ring-indigo-400 focus:border-indigo-400 p-3 transition duration-200">
-                    <option value="">Select status...</option>
-                    <option value="Available">Available</option>
-                    <option value="Rented">Rented</option>
-                    <option value="Maintenance">Maintenance</option>
-                </select>
-            </div>
+</select>
+</div>
 
-            <!-- Location -->
-            <div class="mb-6">
-                <label for="diaDiem" class="block text-sm font-medium text-gray-600 mb-2">Location</label>
-                <input type="text" id="diaDiem" name="diaDiem"
-                    class="w-full border-gray-300 rounded-lg shadow focus:ring-indigo-400 focus:border-indigo-400 p-3 transition duration-200">
-            </div>
 
-            <!-- Description -->
-            <div class="mb-6">
-                <label for="moTa" class="block text-sm font-medium text-gray-600 mb-2">Description</label>
-                <textarea id="moTa" name="moTa" rows="3"
-                    class="w-full border-gray-300 rounded-lg shadow focus:ring-indigo-400 focus:border-indigo-400 p-3 transition duration-200"></textarea>
-            </div>
+<div class="mb-8">
+    <label for="NgayThue" class="block text-sm font-medium text-gray-600 mb-2">Ngày Thuê</label>
+    <input type="date" id="NgayThue" name="NgayThue"
+        class="w-full border-gray-300 rounded-lg shadow focus:ring-teal-400 focus:border-teal-400 p-4 transition duration-200"
+        min="" onchange="validateDates(); calculateFees();" value="@Model.NgayThue.ToString("yyyy-MM-dd")">
+</div>
 
-            <!-- Daily Rental Price -->
-            <div class="mb-6">
-                <label for="giaThueNgay" class="block text-sm font-medium text-gray-600 mb-2">Daily Rental Price
-                    (VND)</label>
-                <input type="number" id="giaThueNgay" name="giaThueNgay" step="0.01" min="0"
-                    class="w-full border-gray-300 rounded-lg shadow focus:ring-indigo-400 focus:border-indigo-400 p-3 transition duration-200">
-            </div>
 
-            <!-- Hourly Rental Price -->
-            <div class="mb-6">
-                <label for="giaThueGio" class="block text-sm font-medium text-gray-600 mb-2">Hourly Rental Price
-                    (VND)</label>
-                <input type="number" id="giaThueGio" name="giaThueGio" step="0.01" min="0"
-                    class="w-full border-gray-300 rounded-lg shadow focus:ring-indigo-400 focus:border-indigo-400 p-3 transition duration-200">
-            </div>
+<div class="mb-8" id="ngayKetThucDiv">
+    <label for="NgayKetThuc" class="block text-sm font-medium text-gray-600 mb-2">Ngày Kết Thúc</label>
+    <input type="date" id="NgayKetThuc" name="NgayKetThuc"
+        class="w-full border-gray-300 rounded-lg shadow focus:ring-teal-400 focus:border-teal-400 p-4 transition duration-200"
+        min="" onchange="validateDates(); calculateFees();" value="@Model.NgayKetThuc?.ToString("yyyy-MM-dd")">
+</div>
 
-            <!-- Owner ID -->
-            <div class="mb-6">
-                <label for="ownId" class="block text-sm font-medium text-gray-600 mb-2">Owner ID</label>
-                <input type="text" id="ownId" name="ownId"
-                    class="w-full border-gray-300 rounded-lg shadow focus:ring-indigo-400 focus:border-indigo-400 p-3 transition duration-200">
-            </div>
 
-            <!-- Model ID -->
-            <div class="mb-6">
-                <label for="modelId" class="block text-sm font-medium text-gray-600 mb-2">Model ID</label>
-                <input type="text" id="modelId" name="modelId"
-                    class="w-full border-gray-300 rounded-lg shadow focus:ring-indigo-400 focus:border-indigo-400 p-3 transition duration-200">
-            </div>
+<div class="mb-8" id="soGioThueDiv">
+    <label for="soGioThue" class="block text-sm font-medium text-gray-600 mb-2">Thời gian thuê</label>
+    <input type="number" id="soGioThue" name="soGioThue" min="1" step="1"
+        class="w-full border-gray-300 rounded-lg shadow focus:ring-teal-400 focus:border-teal-400 p-4 transition duration-200"
+        oninput="calculateFees();">
+</div>
 
-            <!-- Avatar (Image URL) -->
-            <div class="mb-6">
-                <label for="avatar" class="block text-sm font-medium text-gray-600 mb-2">Avatar (Image URL)</label>
-                <input type="url" id="avatar" name="avatar"
-                    class="w-full border-gray-300 rounded-lg shadow focus:ring-indigo-400 focus:border-indigo-400 p-3 transition duration-200">
-            </div>
+<div class="mb-8">
+    <label for="phiDatCho" class="block text-sm font-medium text-gray-600 mb-2">Phí Đặt Chỗ</label>
+    <input type="text" id="phiDatCho" name="phiDatCho" value="500" readonly
+        class="w-full border-gray-300 rounded-lg shadow bg-gray-100 text-gray-700 p-4">
+</div>
 
-            <!-- Action Buttons -->
-            <div class="flex justify-end">
-                <button type="reset"
-                    class="bg-gray-300 hover:bg-gray-400 text-gray-700 py-3 px-6 rounded-lg shadow-lg mr-4 transition duration-300 ease-in-out">Reset</button>
-                <button type="submit"
-                    class="bg-indigo-600 hover:bg-indigo-700 text-white py-3 px-6 rounded-lg shadow-lg transition duration-300 ease-in-out">Submit</button>
+
+<div class="mb-8">
+    <label for="phiThueXe" class="block text-sm font-medium text-gray-600 mb-2">Phí Thuê Xe</label>
+    <input type="text" id="phiThueXe" name="phiThueXe" value="0" readonly
+        class="w-full border-gray-300 rounded-lg shadow bg-gray-100 text-gray-700 p-4">
+</div>
+
+
+<div class="mb-8">
+    <label for="tongPhi" class="block text-sm font-medium text-gray-600 mb-2">Tổng Phí</label>
+    <input type="text" id="tongPhi" name="tongPhi" value="0" readonly
+        class="w-full border-gray-300 rounded-lg shadow bg-gray-100 text-gray-700 p-4">
+</div>
+
+<div class="flex justify-end">
+    <button type="reset"
+        class="bg-gray-300 hover:bg-gray-400 text-gray-700 py-4 px-8 rounded-lg shadow-lg mr-6 transition duration-300 ease-in-out">Reset</button>
+    <button type="submit"
+        class="bg-teal-600 hover:bg-teal-700 text-white py-4 px-8 rounded-lg shadow-lg transition duration-300 ease-in-out">Thuê Xe</button>
+</div>
+
+
+                </form>
+              
+@if (!ViewData.ModelState.IsValid)
+{
+    <div class="alert alert-danger">
+        <ul>
+            @foreach (var fix in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+            {
+                <li>@fix.ErrorMessage</li>
+            }
+        </ul>
+    </div>
+}
             </div>
-        </form>
+        </div>
     </div>
 </body>
 
 </html>
+<script>
+    
+    function validateDates() {
+        var ngayThue = document.getElementById("NgayThue");
+        var ngayKetThuc = document.getElementById("NgayKetThuc");
+        var today = new Date().toISOString().split("T")[0];
+        ngayThue.min = today;
+         if (ngayThue.value) {
+  
+        var ngayThueDate = new Date(ngayThue.value);
+        ngayThueDate.setDate(ngayThueDate.getDate() + 1);
+        var minNgayKetThuc = ngayThueDate.toISOString().split("T")[0];
+
+      
+        ngayKetThuc.min = minNgayKetThuc;
+    }    
+        if (ngayThue.value && ngayKetThuc.value && ngayThue.value > ngayKetThuc.value) {
+            alert("Ngày Kết Thúc phải lớn hơn Ngày Thuê.");
+            ngayKetThuc.value = "";
+        }
+       
+    }
+   
+    function toggleNgayKetThuc() {
+        var phuongThucThue = document.getElementById("PhuongThucThue").value;
+        var ngayKetThucDiv = document.getElementById("ngayKetThucDiv");
+        var soGioThueDiv=document.getElementById("soGioThueDiv");
+        if (phuongThucThue === "Thuê 4 giờ") {
+            ngayKetThucDiv.style.display = "none";
+            soGioThueDiv.style.display="block"
+        } else {
+            ngayKetThucDiv.style.display = "block";
+            soGioThueDiv.style.display="none"
+        }
+    }
+    function calculateFees() {
+    const phiDatXe = 500; 
+    const giaThueNgay = @Model.GiaThueNgay || 0;
+    const giaThueGio = @Model.GiaThueGio || 0;
+    const ngayThue = document.getElementById("NgayThue").value;
+    const ngayKetThuc = document.getElementById("NgayKetThuc").value;
+    const soGioThue = document.getElementById("soGioThue").value;
+    let phiThueXe = 0;
+    if (ngayThue && ngayKetThuc) {
+        const date1 = new Date(ngayThue);
+        const date2 = new Date(ngayKetThuc);
+        const differenceInTime = date2.getTime() - date1.getTime();
+        const differenceInDays = Math.ceil(differenceInTime / (1000 * 3600 * 24));
+        phiThueXe = differenceInDays * giaThueNgay;
+    } else if (soGioThue) {
+        phiThueXe = soGioThue * giaThueGio;
+    }
+    document.getElementById("phiThueXe").value = phiThueXe.toLocaleString('vi-VN');
+    document.getElementById("tongPhi").value = (phiDatXe + phiThueXe).toLocaleString('vi-VN');
+}
+
+function resetFees() {
+    document.getElementById("phiThueXe").value = "0";
+    document.getElementById("tongPhi").value = "0";
+}
+    window.onload = function() {
+        var today = new Date().toISOString().split("T")[0];
+        document.getElementById("NgayThue").min = today;
+        toggleNgayKetThuc(); 
+    };
+</script>
+@{ 
+    var error=TempData["InvalidRentalTime"];
+    if (error != null)
+    {
+        <script>
+            alert('@error');
+        </script>
+    }
+}

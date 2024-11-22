@@ -36,7 +36,7 @@ public partial class QuanLyXeThueContext : DbContext
     public virtual DbSet<XeThue> XeThues { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseSqlServer("Server=LAPTOP-JSHBO3GB\\MSSQLSERVERS;Database=QuanLyXeThue;Integrated Security=True;MultipleActiveResultSets=true;TrustServerCertificate=True;");
+        => optionsBuilder.UseSqlServer("Server=LAPTOP-JSHBO3GB\\MSSQLSERVERS;Database=QuanLyXeThue1;Integrated Security=True;MultipleActiveResultSets=true;TrustServerCertificate=True;");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

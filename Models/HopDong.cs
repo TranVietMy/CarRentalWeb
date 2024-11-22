@@ -7,9 +7,8 @@ public partial class HopDong
 {
     public string RentalId { get; set; } = null!;
 
-    public DateOnly? NgayThue { get; set; }
-
-    public DateOnly? NgayKetThuc { get; set; }
+public DateTime? NgayThue { get; set; }
+public DateTime? NgayKetThuc { get; set; }
 
     public double? TongChiPhi { get; set; }
 

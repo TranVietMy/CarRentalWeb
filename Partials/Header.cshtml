@@ -14,16 +14,26 @@
       <!-- Logo -->
       <div class="flex items-center">
         <a href="/">
-          <img src="~/Image/Paucek and Lage.png" alt="Car rental logo" style="width: 200px; height: 200px;">
+          <img src="@Url.Content("~/Image/Paucek and Lage.png")" alt="Car rental logo" style="width: 200px; height: 200px; position: relative; left: 20px;">
         </a>
       </div>
       <!-- Menu -->
       <nav class="flex space-x-6">
         <a href="/lookup" class="text-gray-600 p-2 text-lg font-semibold hover:text-black">Về chúng tôi</a>
         <a href="/partners" class="text-gray-600 p-2 text-lg font-semibold hover:text-black">Trở thành đối tác</a>
-        <a href="/register" class="text-gray-600 p-2 text-lg font-semibold hover:text-black">Đăng ký</a>
-        <a href="/login"
-          class="text-gray-600 border text-lg p-2 font-semibold rounded border-black  hover:text-black ">Đăng nhập</a>
+        @if (Context.Session.GetString("UserID") != null)
+        {
+          <span class="text-gray-600 p-2 text-lg font-semibold ">Hello, @Context.Session.GetString("UserName")</span>
+          <a href="/logout" class="text-gray-600 border text-lg p-2 font-semibold rounded border-black hover:text-black">
+            Đăng xuất
+          </a>
+        }
+        else
+        {
+          <a href="/register" class="text-gray-600 p-2 text-lg font-semibold hover:text-black">Đăng ký</a>
+          <a href="/login"
+            class="text-gray-600 border text-lg p-2 font-semibold rounded border-black hover:text-black">Đăng nhập</a>
+        }
       </nav>
     </div>
   </header>

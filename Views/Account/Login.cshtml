@@ -4,10 +4,10 @@
 <div class="bg-gray-100 flex items-center justify-center p-10">
     <div class="bg-white p-8 rounded-lg shadow-md w-96">
         <h2 class="text-2xl font-bold mb-6 text-center">Login</h2>
-        <form>
+        <form asp-action="LoginModel" method="post">
             <div class="mb-4">
-                <label for="phone" class="block text-sm font-medium text-gray-700">Phone</label>
-                <input type="text" placeholder="Nhập Số điện thoại của bạn..." id="phone" name="phone" required
+                <label for="Phone" class="block text-sm font-medium text-gray-700">Phone</label>
+                <input type="tel" placeholder="Nhập Số điện thoại của bạn..." id="Phone" name="Phone" required
                     class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:bg-gray-200 focus:border-gray-200 sm:text-sm">
             </div>
             <div class="mb-6">

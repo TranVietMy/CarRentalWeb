@@ -201,7 +201,7 @@
 
 <div class="grid grid-cols-4 gap-4 p-5">
 
-  @foreach(var xeThue in Model.XeThues){
+  @foreach(var xeThue in Model.XeThues.Where(x=> x.TrangThai=="Rảnh")){
   <a href="@Url.Action("ProductDetail", "Home", new { id = xeThue?.CarId })">
     <!-- Card 1 -->
     <div class="border rounded-lg p-4 shadow-md">

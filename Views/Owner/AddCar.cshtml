@@ -1,0 +1,204 @@
+@model CarRental.Models.AddCarModel
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Car Rental Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gradient-to-r from-blue-50 to-indigo-100 py-12">
+    <div class="max-w-4xl mx-auto bg-white shadow-2xl rounded-lg p-10 mt-5">
+        <h2 class="text-3xl font-bold mb-6 text-center text-indigo-700">Thêm xe mới</h2>
+        <form  asp-action="AddCarFunc" method="POST">
+            <!-- Car Name -->
+            <div class="mb-6">
+                <label for="tenXe" class="block text-sm font-medium text-gray-600 mb-2">Tên Xe</label>
+                <input type="text" id="tenXe" name="tenXe"
+                    class="w-full border-gray-300 rounded-lg shadow focus:ring-indigo-400 focus:border-indigo-400 p-3 transition duration-200">
+            </div>
+
+            <!-- Number of Seats -->
+            <div class="mb-6">
+                <label for="soGhe" class="block text-sm font-medium text-gray-600 mb-2">Số ghế</label>
+                <input type="number" id="soGhe" name="soGhe" min="1"
+                    class="w-full border-gray-300 rounded-lg shadow focus:ring-indigo-400 focus:border-indigo-400 p-3 transition duration-200">
+            </div>
+
+            <!-- Type -->
+            <div class="mb-6">
+                <label for="loai" class="block text-sm font-medium text-gray-600 mb-2">Loại xe</label>
+                <select   id="loai" name="loai"
+                    class="w-full border-gray-300 rounded-lg shadow focus:ring-indigo-400 focus:border-indigo-400 p-3 transition duration-200">
+                    <option value="Số tự động">Số tự động</option>
+                    <option value="Số sàn">Số sàn</option>
+                </select>
+            </div>
+
+            <!-- Fuel -->
+            <div class="mb-6">
+                <label for="nhienLieu" class="block text-sm font-medium text-gray-600 mb-2">Nhiên liệu</label>
+                <select   id="nhienLieu" name="nhienLieu"
+                    class="w-full border-gray-300 rounded-lg shadow focus:ring-indigo-400 focus:border-indigo-400 p-3 transition duration-200">
+                    <option value="Xăng">Xăng</option>
+                    <option value="Dầu diesel">Dầu diesel</option>
+                     <option value="Điện">Điện</option>
+                </select>
+            </div>
+            <!-- Location -->
+            <div class="mb-6">
+                <label for="diaDiem" class="block text-sm font-medium text-gray-600 mb-2">Địa chỉ</label>
+                <input type="text" id="diaDiem" name="diaDiem"
+                    class="w-full border-gray-300 rounded-lg shadow focus:ring-indigo-400 focus:border-indigo-400 p-3 transition duration-200">
+            </div>
+
+            <!-- Description -->
+            <div class="mb-6">
+                <label for="moTa" class="block text-sm font-medium text-gray-600 mb-2">Mô tả</label>
+                <textarea id="moTa" name="moTa" rows="3"
+                    class="w-full border-gray-300 rounded-lg shadow focus:ring-indigo-400 focus:border-indigo-400 p-3 transition duration-200"></textarea>
+            </div>
+
+            <!-- Daily Rental Price -->
+            <div class="mb-6">
+                <label for="giaThueNgay" class="block text-sm font-medium text-gray-600 mb-2">Giá theo ngày
+                    (k)</label>
+                <input type="number" id="giaThueNgay" name="giaThueNgay" step="0.01" min="0"
+                    class="w-full border-gray-300 rounded-lg shadow focus:ring-indigo-400 focus:border-indigo-400 p-3 transition duration-200">
+            </div>
+
+            <!-- Hourly Rental Price -->
+            <div class="mb-6">
+                <label for="giaThueGio" class="block text-sm font-medium text-gray-600 mb-2">Giá theo giờ (4h)
+                    (k)</label>
+                <input type="number" id="giaThueGio" name="giaThueGio" step="0.01" min="0"
+                    class="w-full border-gray-300 rounded-lg shadow focus:ring-indigo-400 focus:border-indigo-400 p-3 transition duration-200">
+            </div>
+
+            
+            <div class="mb-6">
+                <label for="CateId" class="block text-sm font-medium text-gray-600 mb-2">Chọn Hãng Xe</label>
+                <select   id="CateId" name="CateId"
+                    class="w-full border-gray-300 rounded-lg shadow focus:ring-indigo-400 focus:border-indigo-400 p-3 transition duration-200">                    
+                        @foreach (var cate in Model.HangXes)
+                        {
+                            <option value="@cate.CateId">@cate.TenHang</option>
+                        }
+                </select>
+
+            </div>
+            <div class="mb-6">
+        <label for="ModelId" class="block text-sm font-medium text-gray-600 mb-2">Chọn Mẫu Xe</label>
+        <select id="ModelId" name="ModelId" class="w-full border-gray-300 rounded-lg shadow focus:ring-indigo-400 focus:border-indigo-400 p-3 transition duration-200">
+             <option value="">Chọn Mẫu Xe</option>
+        </select>
+    </div>
+
+            
+
+            <!-- Avatar (Image URL) -->
+            <div class="mb-6">
+                <label for="avatar" class="block text-sm font-medium text-gray-600 mb-2">Avatar Xe (Link ảnh)</label>
+                <input type="url" id="avatar" name="avatar"
+                    class="w-full border-gray-300 rounded-lg shadow focus:ring-indigo-400 focus:border-indigo-400 p-3 transition duration-200">
+            </div>
+            <!-- Additional Images -->
+            <div class="mb-6">
+                <label class="block text-sm font-medium text-gray-600 mb-2">Ảnh phụ</label>
+                <div id="additionalImagesContainer">
+                    <!-- Placeholder for dynamic inputs -->
+                </div>
+                <button type="button" id="addImageBtn"
+                class="mt-3 bg-indigo-600 hover:bg-indigo-700 text-white py-2 px-4 rounded-lg shadow-lg transition duration-300 ease-in-out">
+                Thêm ảnh phụ
+                </button>
+
+            </div>
+            <div class="container mx-auto px-4">
+        <h2 class="text-2xl font-bold mb-4">Các tiện nghi khác</h2>
+        <ul class="grid grid-cols-3 gap-4">
+    @if (Model.AllFeats != null)
+    {
+        @foreach (var feat in Model.AllFeats)
+        {
+            <li class="flex items-center">
+                <input type="checkbox" name="SelectedFeats" value="@feat.FeatId" 
+                    @(Model.SelectedFeats.Contains(feat.FeatId) ? "checked" : "") />
+                <img class="w-6 h-6 mr-2" src="@feat.FeatImg" alt="@feat.TenTinhNang" />
+                <span>@feat.TenTinhNang</span>
+            </li>
+        }
+    }
+    else
+    {
+        <li class="text-gray-500">Không có tiện nghi nào.</li>
+    }
+</ul>
+</div>
+
+
+            <!-- Action Buttons -->
+            <div class="flex justify-end">
+                <button type="reset"
+                    class="bg-gray-300 hover:bg-gray-400 text-gray-700 py-3 px-6 rounded-lg shadow-lg mr-4 transition duration-300 ease-in-out">Reset</button>
+                <button type="submit"
+                    class="bg-indigo-600 hover:bg-indigo-700 text-white py-3 px-6 rounded-lg shadow-lg transition duration-300 ease-in-out">Submit</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
+<script>
+     document.getElementById('CateId').addEventListener('change', function () {
+        const cateId = this.value; 
+        
+        const modelSelect = document.getElementById('ModelId');
+        modelSelect.innerHTML = '<option value="">Chọn Mẫu Xe</option>';
+
+        if (cateId!=null) {
+           
+            fetch(`/GetMauXeByCateId?cateId=${cateId}`)
+                .then(response => response.json())
+                .then(data => {
+                    data.forEach(model => {
+                        const option = document.createElement('option');
+                        option.value = model.modelId;
+                        option.textContent = model.modelName;
+                        modelSelect.appendChild(option);
+                    });
+                })
+                .catch(error => console.error('Error fetching models:', error));
+        }
+    });
+</script>
+<script>
+    const maxImages = 3;
+    let currentImages = 0;
+
+    document.getElementById('addImageBtn').addEventListener('click', () => {
+        if (currentImages < maxImages) {
+            currentImages++;
+            const container = document.getElementById('additionalImagesContainer');
+            const input = document.createElement('input');
+            input.type = 'url';
+            input.name = 'additionalImages[]';
+            input.placeholder = `Link ảnh phụ ${currentImages}`;
+            input.className = 'w-full border-gray-300 rounded-lg shadow focus:ring-indigo-400 focus:border-indigo-400 p-3 transition duration-200 mb-3';
+            container.appendChild(input);
+        } else {
+            alert('Bạn chỉ có thể thêm tối đa 3 ảnh phụ!');
+        }
+    });
+</script>
+@{ 
+    var error=TempData["ErrorMessage"];
+    if (error != null)
+    {
+        <script>
+            alert('@error');
+        </script>
+    }
+}

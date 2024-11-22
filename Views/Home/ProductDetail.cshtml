@@ -30,7 +30,12 @@
             <span class="line-through text-gray-500 text-lg">@Model.GiaThueGio k/h</span>
             <span class="text-red-500 text-xl font-bold ml-2">@Model.GiaThueGio k/h</span>
         </div>
-        <button class="mt-4 lg:mt-0 bg-teal-600 text-white font-semibold py-2 px-4 rounded-md">Thuê xe ngay</button>
+        @if (Context.Session.GetString("UserID") != null)
+        {<a href="@Url.Action("ThueXe", "Home", new { id = Model.CarId })" class="mt-4 lg:mt-0 bg-teal-600 text-white font-semibold py-2 px-4 rounded-md">Thuê xe ngay</a>
+
+        }
+        else{<a href="/login" class="mt-4 lg:mt-0 bg-teal-600 text-white font-semibold py-2 px-4 rounded-md">Thuê xe ngay</a>}
+        
     </div>
 
     <!-- Hình ảnh xe -->

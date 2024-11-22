@@ -42,6 +42,11 @@ app.MapControllerRoute(
     defaults: new { controller = "Account", action = "Register" }
 );
 app.MapControllerRoute(
+    name: "Logout",
+    pattern: "/logout",
+    defaults: new { controller = "Account", action = "Logout" }
+);
+app.MapControllerRoute(
     name: "ForgotPassword",
     pattern: "/forgotpassword",
     defaults: new { controller = "Account", action = "ForgotPassword" }
@@ -70,5 +75,15 @@ app.MapControllerRoute(
     name: " HopDong",
     pattern: "/hopdong",
     defaults: new { controller = "Admin", action = "HopDong" }
+);
+app.MapControllerRoute(
+    name: "AddCar",
+    pattern: "/addcar",
+    defaults: new { controller = "Owner", action = "AddCar" }
+);
+app.MapControllerRoute(
+    name: "Accept",
+    pattern: "/accept",
+    defaults: new { controller = "Owner", action = "Accept" }
 );
 app.Run();

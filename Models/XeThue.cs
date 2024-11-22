@@ -9,7 +9,7 @@ public partial class XeThue
 
     public string? TenXe { get; set; }
 
-    public int? SoGhe { get; set; }
+    public int SoGhe { get; set; }
 
     public string? Loai { get; set; }
 
